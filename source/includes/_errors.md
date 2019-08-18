@@ -1,11 +1,6 @@
 # Errors
 
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
-</aside>
-
-The Kittn API uses the following error codes:
-
+For reference, the following error codes should be used by the server side scripting to better communicate with BuilderJS
 
 Error Code | Meaning
 ---------- | -------
@@ -20,3 +15,7 @@ Error Code | Meaning
 429 | Too Many Requests -- You're requesting too many kittens! Slow down!
 500 | Internal Server Error -- We had a problem with our server. Try again later.
 503 | Service Unavailable -- We're temporarily offline for maintenance. Please try again later.
+
+<aside class="notice">
+As of version 2.0, there are two cases when BuilderJS makes an Ajax request to the server end. The first is for saving latest changes of the design view (see Storage section for more details), and the second is when it sends an asset (image or video). Server script should return <code>HTTP 200</code> for successful job and one of the error code above for failure
+</aside>
