@@ -31,7 +31,7 @@ This API documentation page was created with [Slate](https://github.com/lord/sla
 
 ## Quick installation
 
-> Put the following HTML / JavaScript code snipets to your HTML page:
+> Put the following HTML / JavaScript code snippet to your HTML page:
 
 ```html
 <html>
