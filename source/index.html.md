@@ -19,11 +19,11 @@ search: true
 
 # Introduction
 
-Welcome to **BuilderJS 2.0**, the most powerful Email or Web Page Builder tool. BuilderJS is the easiest, quickest way to design elegant, mobile responsive emails or pages for your business.
+Welcome to **BuilderJS 2.0**, the most powerful Email or Web Page Builder tool. BuilderJS is the easiest, quickest way to design elegant, mobile responsive emails or landing pages for your business.
 
-BuilderJS is made in pure Javascript and HTML, making it easy to integrate with any web application no matter what the backend programming language is (Java, .Net, PHP, Ruby on Rails, Python, etc.)
+BuilderJS is made in pure Javascript and HTML, making it easy to integrate with any web application no matter what the server-side programming language is (Java, .Net, PHP, Ruby on Rails, Python, etc.)
 
-BuilderJS is made fully customizable and open to any integration scenario: you can make it a standalone web page or embed it into your own site. For example, when it comes to save user work, BuilderJS allow you to configure a Save URI, to which it will make a POST request, passing the latest updates to the server side scripting for handling. The request is triggered when user clicks on Save button in the builder. And there are lots of other configuration settings allowing you to customize how it works and interact with the your other components.
+BuilderJS is made fully customizable and open to any integration scenario: you can make it a standalone web page or embed it into your own site. For example, when it comes to save user work, BuilderJS allows you to configure a Save URL, to which it will make a POST request, passing the latest updates to the server-side scripting for handling. The request is triggered when user clicks on Save button in the builder. And there are lots of other configuration settings allowing you to customize how it works and interacts with the other components.
 
 This API documentation page was created with [Slate](https://github.com/lord/slate). Feel free to help contribute to the our documentation.
 
