@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;javascript&quot;,&quot;php&quot;,&quot;ruby&quot;,&quot;python&quot;]">
+  <body class="index" data-languages="[&quot;html&quot;,&quot;php&quot;,&quot;ruby&quot;,&quot;python&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -211,7 +211,7 @@
     <div class="toc-wrapper">
       <img src="images/logo.png" class="logo" alt="Logo" />
         <div class="lang-selector">
-              <a href="#" data-language-name="javascript">javascript</a>
+              <a href="#" data-language-name="html">html</a>
               <a href="#" data-language-name="php">php</a>
               <a href="#" data-language-name="ruby">ruby</a>
               <a href="#" data-language-name="python">python</a>
@@ -225,13 +225,16 @@
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
           </li>
           <li>
-            <a href="#get-started" class="toc-h1 toc-link" data-title="Get Started">Get Started</a>
+            <a href="#installation" class="toc-h1 toc-link" data-title="Installation">Installation</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#quick-installation" class="toc-h2 toc-link" data-title="Quick installation">Quick installation</a>
+                    <a href="#quick-start" class="toc-h2 toc-link" data-title="Quick start">Quick start</a>
                   </li>
                   <li>
                     <a href="#examples" class="toc-h2 toc-link" data-title="Examples">Examples</a>
+                  </li>
+                  <li>
+                    <a href="#advanced" class="toc-h2 toc-link" data-title="Advanced">Advanced</a>
                   </li>
               </ul>
           </li>
@@ -315,7 +318,7 @@
 <p>BuilderJS is made fully customizable and open to any integration scenario: you can make it a standalone web page or embed it into your own site. For example, when it comes to save user work, BuilderJS allows you to configure a Save URL, to which it will make a POST request, passing the latest updates to the server-side scripting for handling. The request is triggered when user clicks on Save button in the builder. And there are lots of other configuration settings allowing you to customize how it works and interacts with the other components.</p>
 
 <p>This API documentation page was created with <a href="https://github.com/lord/slate">Slate</a>. Feel free to help contribute to the our documentation.</p>
-<h1 id='get-started'>Get Started</h1><h2 id='quick-installation'>Quick installation</h2>
+<h1 id='installation'>Installation</h1><h2 id='quick-start'>Quick start</h2>
 <blockquote>
 <p>Put the following HTML / JavaScript code snippet to your HTML page:</p>
 </blockquote>
@@ -338,7 +341,7 @@
 
 <p>BuilderJS comes with <code>init()</code> helper function allowing you to quickly initiate the builder and append it to your current web page.</p>
 
-<p>Simply include the BuilderJS JavaScript and CSS files to your HTML page and initiate it on page load. See sample code to see how easy it is to load a fully-functioning builder to your webpage. With minimum configuration like that, the builder loads with a default blank design page like below</p>
+<p>Simply include the BuilderJS JavaScript and CSS files to your HTML page and initiate it on page load. See sample code in the right panel, <code>javascript</code> tab, to see how easy it is to load a fully-functioning builder to your webpage. With minimum configuration like that, the builder loads with a default blank design page like below</p>
 
 <p><img src="https://builderjs.s3.amazonaws.com/BuilderJS-00303.png" title="Default Blank Page" alt="Default Blank Page" /></p>
 
@@ -349,11 +352,32 @@ Instantiate the <code>builder</code> variable without any parameters and use <co
 <p>BuilderJS also comes with a sample package so that you can quickly explore the builder features. Just put the <code>sample</code> folder to your document root and open it in a web browser to see it in action</p>
 
 <p><code>http://example.com/sample/</code></p>
+<h2 id='advanced'>Advanced</h2><pre class="highlight html tab-html"><code><span class="nt">&lt;script&gt;</span>
+    <span class="c1">// A more complicated setup</span>
+    <span class="kd">var</span> <span class="nx">builder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Editor</span><span class="p">({</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s1">'http://example.com/template/02093403'</span><span class="p">,</span>
+        <span class="na">saveUrl</span><span class="p">:</span> <span class="s1">'http://example.com/save?id=02093403'</span><span class="p">,</span>
+        <span class="na">saveMethod</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
+        <span class="na">backUrl</span><span class="p">:</span> <span class="s1">'http://example.com'</span><span class="p">,</span>
+        <span class="na">tags</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s1">'First Name'</span><span class="p">,</span> <span class="na">type</span><span class="p">:</span> <span class="s1">'display'</span><span class="p">},</span>
+            <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s1">'Last Name'</span><span class="p">,</span> <span class="na">type</span><span class="p">:</span> <span class="s1">'display'</span><span class="p">},</span>
+            <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s1">'Current Year'</span><span class="p">,</span> <span class="na">type</span><span class="p">:</span> <span class="s1">'display'</span><span class="p">},</span>
+            <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s1">'Current Date'</span><span class="p">,</span> <span class="na">type</span><span class="p">:</span> <span class="s1">'display'</span><span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre>
+<p>See the right panel for a more complicated setup. See the <strong>Configuration</strong> section for advanced installation options which provide you more control over how the builder functions.</p>
+
+<p>By default, BuilderJS renders its HTML content to the <code>document.body</code> element of the page. i.e. the builder view will occupy the whole page. You can also configure it to render to a child element of your page.</p>
 <h1 id='configuration'>Configuration</h1><h2 id='load-a-template'>Load a Template</h2>
 <p>By default BuilderJS loads with a blank design for you to start making your own page / email. You can also start working with an existing email or page template by loading it into the design view. There are 2 options for loading an existing template</p>
-<h3 id='from-html-string'>From HTML string</h3><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">builder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Builder</span><span class="p">();</span>
-<span class="nx">builder</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
-<span class="nx">builder</span><span class="p">.</span><span class="nx">load</span><span class="p">(</span><span class="s1">'&lt;div&gt; &lt;h1&gt;Awesome title&lt;/h1&gt; &lt;p&gt; Page content... &lt;/p&gt; &lt;/div&gt;'</span><span class="p">)</span>
+<h3 id='from-html-string'>From HTML string</h3><pre class="highlight html tab-html"><code><span class="nt">&lt;script&gt;</span>
+    <span class="kd">var</span> <span class="nx">builder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Builder</span><span class="p">();</span>
+    <span class="nx">builder</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
+    <span class="nx">builder</span><span class="p">.</span><span class="nx">load</span><span class="p">(</span><span class="s1">'&lt;div&gt; &lt;h1&gt;Awesome title&lt;/h1&gt; &lt;p&gt; Page content... &lt;/p&gt; &lt;/div&gt;'</span><span class="p">)</span>
+<span class="nt">&lt;/script&gt;</span>
 </code></pre>
 <p>Use the <code>load(html)</code> function, passing an HTML string. See code example in the right panel</p>
 
@@ -376,10 +400,13 @@ Loading a template from an HTML string is not a good practice and is, in general
 </aside>
 <h3 id='from-a-url'>From a URL</h3>
 <p>Very often, your template is also available as a public URL. Then you can pass it to the <code>url</code> parameter to your builder initialization code. See example in the right panel</p>
-<pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">builder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Builder</span><span class="p">({</span>
-    <span class="na">url</span><span class="p">:</span> <span class="s1">'http://example.com/template/2001990'</span>
-<span class="p">});</span>
-<span class="nx">builder</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
+<pre class="highlight html tab-html"><code><span class="nt">&lt;script&gt;</span>
+    <span class="kd">var</span> <span class="nx">builder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Builder</span><span class="p">({</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s1">'http://example.com/template/2001990'</span>
+    <span class="p">});</span>
+
+    <span class="nx">builder</span><span class="p">.</span><span class="nx">init</span><span class="p">();</span>
+<span class="nt">&lt;/script&gt;</span>
 </code></pre>
 <table><thead>
 <tr>
@@ -400,17 +427,19 @@ You can try passing with any URL to the `url` parameter of the builder initializ
 </aside>
 <h3 id='upload-a-template'>Upload a template</h3>
 <p>Remember that BuildJS is a pure front-end application. Uploading a template to the server requires server scripting language like Ruby on Rails, PHP, Java... to handle file upload and pass the URL of the newly uploaded template as <code>url</code> parameter of the builder construction function.</p>
-<h2 id='tags'>Tags</h2><pre class="highlight javascript tab-javascript"><code><span class="c1">// Initialize BuilderJS with tags</span>
+<h2 id='tags'>Tags</h2><pre class="highlight html tab-html"><code><span class="nt">&lt;script&gt;</span>
+    <span class="c1">// Initialize BuilderJS with tags</span>
 
-<span class="kd">var</span> <span class="nx">builder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Editor</span><span class="p">({</span>
-    <span class="na">tags</span><span class="p">:</span> <span class="p">[</span>
-      <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s1">'First Name'</span><span class="p">,</span> <span class="na">type</span><span class="p">:</span> <span class="s1">'display'</span><span class="p">},</span>
-      <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s1">'Last Name'</span><span class="p">,</span> <span class="na">type</span><span class="p">:</span> <span class="s1">'display'</span><span class="p">},</span>
-      <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s1">'Current Year'</span><span class="p">,</span> <span class="na">type</span><span class="p">:</span> <span class="s1">'display'</span><span class="p">},</span>
-      <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s1">'Current Date'</span><span class="p">,</span> <span class="na">type</span><span class="p">:</span> <span class="s1">'display'</span><span class="p">},</span>
-    <span class="p">]</span>
-<span class="p">});</span>
-<span class="nx">builder</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">builder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Editor</span><span class="p">({</span>
+        <span class="na">tags</span><span class="p">:</span> <span class="p">[</span>
+          <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s1">'First Name'</span><span class="p">,</span> <span class="na">type</span><span class="p">:</span> <span class="s1">'display'</span><span class="p">},</span>
+          <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s1">'Last Name'</span><span class="p">,</span> <span class="na">type</span><span class="p">:</span> <span class="s1">'display'</span><span class="p">},</span>
+          <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s1">'Current Year'</span><span class="p">,</span> <span class="na">type</span><span class="p">:</span> <span class="s1">'display'</span><span class="p">},</span>
+          <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s1">'Current Date'</span><span class="p">,</span> <span class="na">type</span><span class="p">:</span> <span class="s1">'display'</span><span class="p">},</span>
+        <span class="p">]</span>
+    <span class="p">});</span>
+    <span class="nx">builder</span><span class="p">.</span><span class="nx">init</span><span class="p">();</span>
+<span class="nt">&lt;/script&gt;</span>
 </code></pre>
 <p>Tag is a powerful feature of BuildJS, allowing users to inject dynamic content to page or email content. For example, very often user wants to inject a dynamic contact first name or last name to an email template. Dynamic content can be achieved by inserting a place holder, or, in other word, a tag to your email or page content. When it comes to load your page or send your email, tags will be translated to appropriate values. Example of tags are:</p>
 
@@ -472,6 +501,10 @@ You can try passing with any URL to the `url` parameter of the builder initializ
 <td>view</td>
 <td>Possible values include <code>design</code> and <code>preview</code>. Tell the builder to open in design or preview mode</td>
 </tr>
+<tr>
+<td>renderTo</td>
+<td>The parent element to which BuilderJS renders its content. It is <code>document.root</code> by default</td>
+</tr>
 </tbody></table>
 <h1 id='key-features'>Key Features</h1><h2 id='visual-drag-amp-drop-editor'>Visual Drag &amp; Drop Editor</h2>
 <p>BuilderJS comes as a fully-functioned visual Drag &amp; Drop editor, allowing you to quickly build your page or email templates without any hassle</p>
@@ -479,7 +512,8 @@ You can try passing with any URL to the `url` parameter of the builder initializ
 <p>Beside the visual Drag &amp; Drop editor, BuilderJS also supports a Source Editor which allows you to completely customize your page or email design by updating HTML / CSS directly. This is for advanced users who are familiar with HTML / CSS markup language</p>
 
 <p><img src="https://builderjs.s3.amazonaws.com/BuilderJS-Source-View.png" title="Source Editor" alt="Source Editor" /></p>
-<h2 id='template'>Template</h2><pre class="highlight javascript tab-javascript"><code><span class="c1">// Pass a list of available templates to the builder</span>
+<h2 id='template'>Template</h2><pre class="highlight html tab-html"><code><span class="nt">&lt;script&gt;</span>
+<span class="c1">// Pass a list of available templates to the builder</span>
 <span class="c1">// which will be available for user to choose from</span>
 <span class="c1">// by going to Design &gt; New From A Template</span>
 
@@ -508,6 +542,8 @@ You can try passing with any URL to the `url` parameter of the builder initializ
 <span class="kd">var</span> <span class="nx">builder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Editor</span><span class="p">({</span>
     <span class="na">templates</span><span class="p">:</span> <span class="nx">templates</span>
 <span class="p">});</span>
+
+<span class="nt">&lt;/script&gt;</span>
 </code></pre>
 <blockquote>
 <p>Notice that <code>templates</code> parameter expects an array of templates, each with <code>name</code>, <code>url</code> and <code>thumbnail</code></p>
@@ -529,14 +565,16 @@ However, most of the time, you may want to start making your own email or page d
 <p>You can also add your own widget to the list for using later on. BuilderJS supports &quot;Add to widget library&quot; feature, allowing you to select an element or group of elements to become a widget.</p>
 
 <p><img src="https://builderjs.s3.amazonaws.com/BuilderJS-Add-To-Widget.png" title="Add to widget" alt="Add to widget" /></p>
-<h1 id='storage'>Storage</h1><pre class="highlight javascript tab-javascript"><code><span class="c1">// Initiate builder with `saveUrl`</span>
-<span class="c1">// See `php` or `ruby` tab to see how to</span>
-<span class="c1">// handle save request sent from builder in PHP and Ruby respectively</span>
-<span class="kd">var</span> <span class="nx">builder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Editor</span><span class="p">({</span>
-    <span class="na">url</span><span class="p">:</span> <span class="s1">'http://example.com/template/02093403'</span><span class="p">,</span>
-    <span class="na">saveUrl</span><span class="p">:</span> <span class="s1">'http://example.com/save?id=02093403'</span><span class="p">,</span>
-    <span class="na">saveMethod</span><span class="p">:</span> <span class="s1">'POST'</span>
-<span class="p">});</span>
+<h1 id='storage'>Storage</h1><pre class="highlight html tab-html"><code><span class="nt">&lt;script&gt;</span>
+    <span class="c1">// Initiate builder with `saveUrl`</span>
+    <span class="c1">// See `php` or `ruby` tab to see how to</span>
+    <span class="c1">// handle save request sent from builder in PHP and Ruby respectively</span>
+    <span class="kd">var</span> <span class="nx">builder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Editor</span><span class="p">({</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s1">'http://example.com/template/02093403'</span><span class="p">,</span>
+        <span class="na">saveUrl</span><span class="p">:</span> <span class="s1">'http://example.com/save?id=02093403'</span><span class="p">,</span>
+        <span class="na">saveMethod</span><span class="p">:</span> <span class="s1">'POST'</span>
+    <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="c"># Sample controller code for handling the save request</span>
 <span class="c"># sent from BuilderJS</span>
 
@@ -638,21 +676,23 @@ However, most of the time, you may want to start making your own email or page d
 <p>Since BuilderJS is a pure JavaScript library, accepting parameters passed to its initialization, it is open to any kind of integration no matter what your programming language or database system is.</p>
 
 <p>All its job is to load a template in HTML, allow user to make changes using its visual drag &amp; drop or source edit then submit the changes to the server for storing.</p>
-<h1 id='customization'>Customization</h1><pre class="highlight javascript tab-javascript"><code><span class="kr">class</span> <span class="nx">MySampleWidget</span> <span class="kr">extends</span> <span class="nx">Widget</span> <span class="p">{</span>
-    <span class="c1">// get HTML to insert into content</span>
-    <span class="nx">init</span><span class="p">()</span> <span class="p">{</span>
-        <span class="kr">super</span><span class="p">.</span><span class="nx">init</span><span class="p">();</span>
-    <span class="p">}</span>
+<h1 id='customization'>Customization</h1><pre class="highlight html tab-html"><code><span class="nt">&lt;script&gt;</span>
+    <span class="kr">class</span> <span class="nx">MySampleWidget</span> <span class="kr">extends</span> <span class="nx">Widget</span> <span class="p">{</span>
+        <span class="c1">// get HTML to insert into content</span>
+        <span class="nx">init</span><span class="p">()</span> <span class="p">{</span>
+            <span class="kr">super</span><span class="p">.</span><span class="nx">init</span><span class="p">();</span>
+        <span class="p">}</span>
 
-    <span class="nx">title</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="s1">'My Sample Widget'</span><span class="p">;</span>
-    <span class="p">}</span>
+        <span class="nx">title</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="s1">'My Sample Widget'</span><span class="p">;</span>
+        <span class="p">}</span>
 
-    <span class="nx">renderHtml</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="s1">'&lt;div&gt; A Simple Widget with 1 line of text &lt;/div&gt;'</span><span class="p">;</span>
-    <span class="p">}</span>
+        <span class="nx">renderHtml</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="s1">'&lt;div&gt; A Simple Widget with 1 line of text &lt;/div&gt;'</span><span class="p">;</span>
+        <span class="p">}</span>
 
-    <span class="c1">// custom behavior goes here...</span>
+        <span class="c1">// custom behavior goes here...</span>
+<span class="nt">&lt;/script&gt;</span>
 </code></pre>
 <p>BuilderJS is written in a well designed structure, allowing easy and straightforward customization. For example, you can add your own widget to the library beside the default ones like Text, Image, Video, Social Network Icons, etc. See the right panel, <code>javascript</code> tab to find out how to write a custom widget.</p>
 
@@ -725,7 +765,7 @@ As of version 2.0, there are two cases when BuilderJS makes an Ajax request to t
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="html">html</a>
                 <a href="#" data-language-name="php">php</a>
                 <a href="#" data-language-name="ruby">ruby</a>
                 <a href="#" data-language-name="python">python</a>
