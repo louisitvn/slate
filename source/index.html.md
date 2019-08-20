@@ -2,7 +2,7 @@
 title: BuilderJS API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - javascript
+  - html
   - php
   - ruby
   - python
@@ -27,9 +27,9 @@ BuilderJS is made fully customizable and open to any integration scenario: you c
 
 This API documentation page was created with [Slate](https://github.com/lord/slate). Feel free to help contribute to the our documentation.
 
-# Get Started
+# Installation
 
-## Quick installation
+## Quick start
 
 > Put the following HTML / JavaScript code snippet to your HTML page:
 
@@ -52,7 +52,7 @@ This API documentation page was created with [Slate](https://github.com/lord/sla
 
 BuilderJS comes with `init()` helper function allowing you to quickly initiate the builder and append it to your current web page.
 
-Simply include the BuilderJS JavaScript and CSS files to your HTML page and initiate it on page load. See sample code to see how easy it is to load a fully-functioning builder to your webpage. With minimum configuration like that, the builder loads with a default blank design page like below
+Simply include the BuilderJS JavaScript and CSS files to your HTML page and initiate it on page load. See sample code in the right panel, `javascript` tab, to see how easy it is to load a fully-functioning builder to your webpage. With minimum configuration like that, the builder loads with a default blank design page like below
 
 ![Default Blank Page](https://builderjs.s3.amazonaws.com/BuilderJS-00303.png "Default Blank Page")
 
@@ -66,6 +66,30 @@ BuilderJS also comes with a sample package so that you can quickly explore the b
 
 `http://example.com/sample/`
 
+## Advanced
+
+```html
+<script>
+    // A more complicated setup
+    var builder = new Editor({
+        url: 'http://example.com/template/02093403',
+        saveUrl: 'http://example.com/save?id=02093403',
+        saveMethod: 'POST',
+        backUrl: 'http://example.com',
+        tags: [
+            {name: 'First Name', type: 'display'},
+            {name: 'Last Name', type: 'display'},
+            {name: 'Current Year', type: 'display'},
+            {name: 'Current Date', type: 'display'}
+        ]
+    });
+</script>
+```
+
+See the right panel for a more complicated setup. See the **Configuration** section for advanced installation options which provide you more control over how the builder functions.
+
+By default, BuilderJS renders its HTML content to the `document.body` element of the page. i.e. the builder view will occupy the whole page. You can also configure it to render to a child element of your page.
+
 # Configuration
 
 ## Load a Template
@@ -74,10 +98,12 @@ By default BuilderJS loads with a blank design for you to start making your own 
 
 ### From HTML string
 
-```javascript
-var builder = new Builder();
-builder.render(document.body);
-builder.load('<div> <h1>Awesome title</h1> <p> Page content... </p> </div>')
+```html
+<script>
+    var builder = new Builder();
+    builder.render(document.body);
+    builder.load('<div> <h1>Awesome title</h1> <p> Page content... </p> </div>')
+</script>
 ```
 
 Use the `load(html)` function, passing an HTML string. See code example in the right panel
@@ -94,11 +120,14 @@ Loading a template from an HTML string is not a good practice and is, in general
 
 Very often, your template is also available as a public URL. Then you can pass it to the `url` parameter to your builder initialization code. See example in the right panel
 
-```javascript
-var builder = new Builder({
-    url: 'http://example.com/template/2001990'
-});
-builder.render(document.body);
+```html
+<script>
+    var builder = new Builder({
+        url: 'http://example.com/template/2001990'
+    });
+
+    builder.init();
+</script>
 ```
 
 Parameter | Default | Description
@@ -115,18 +144,20 @@ Remember that BuildJS is a pure front-end application. Uploading a template to t
 
 ## Tags
 
-```javascript
-// Initialize BuilderJS with tags
+```html
+<script>
+    // Initialize BuilderJS with tags
 
-var builder = new Editor({
-    tags: [
-      {name: 'First Name', type: 'display'},
-      {name: 'Last Name', type: 'display'},
-      {name: 'Current Year', type: 'display'},
-      {name: 'Current Date', type: 'display'},
-    ]
-});
-builder.render(document.body);
+    var builder = new Editor({
+        tags: [
+          {name: 'First Name', type: 'display'},
+          {name: 'Last Name', type: 'display'},
+          {name: 'Current Year', type: 'display'},
+          {name: 'Current Date', type: 'display'},
+        ]
+    });
+    builder.init();
+</script>
 ```
 
 Tag is a powerful feature of BuildJS, allowing users to inject dynamic content to page or email content. For example, very often user wants to inject a dynamic contact first name or last name to an email template. Dynamic content can be achieved by inserting a place holder, or, in other word, a tag to your email or page content. When it comes to load your page or send your email, tags will be translated to appropriate values. Example of tags are:
@@ -164,6 +195,7 @@ title | Title to set for the current HTML page, overwriting the `<title>` tag va
 saveUrl | The URL to which BuilderJS submits its latest content for storing (handled by server script). See Storage section for details
 tags | Tags used by the BuilderJS to represent a dynamic value. See Tags section for the details
 view | Possible values include `design` and `preview`. Tell the builder to open in design or preview mode
+renderTo | The parent element to which BuilderJS renders its content. It is `document.root` by default
 
 # Key Features
 
@@ -179,7 +211,8 @@ Beside the visual Drag & Drop editor, BuilderJS also supports a Source Editor wh
 
 ## Template
 
-```javascript
+```html
+<script>
 // Pass a list of available templates to the builder
 // which will be available for user to choose from
 // by going to Design > New From A Template
@@ -209,6 +242,8 @@ var templates = [
 var builder = new Editor({
     templates: templates
 });
+
+</script>
 ```
 
 > Notice that `templates` parameter expects an array of templates, each with `name`, `url` and `thumbnail`
@@ -238,15 +273,17 @@ You can also add your own widget to the list for using later on. BuilderJS suppo
 
 # Storage
 
-```javascript
-// Initiate builder with `saveUrl`
-// See `php` or `ruby` tab to see how to
-// handle save request sent from builder in PHP and Ruby respectively
-var builder = new Editor({
-    url: 'http://example.com/template/02093403',
-    saveUrl: 'http://example.com/save?id=02093403',
-    saveMethod: 'POST'
-});
+```html
+<script>
+    // Initiate builder with `saveUrl`
+    // See `php` or `ruby` tab to see how to
+    // handle save request sent from builder in PHP and Ruby respectively
+    var builder = new Editor({
+        url: 'http://example.com/template/02093403',
+        saveUrl: 'http://example.com/save?id=02093403',
+        saveMethod: 'POST'
+    });
+</script>
 ```
 
 ```python
@@ -355,22 +392,24 @@ All its job is to load a template in HTML, allow user to make changes using its 
 
 # Customization
 
-```javascript
-class MySampleWidget extends Widget {
-    // get HTML to insert into content
-    init() {
-        super.init();
-    }
+```html
+<script>
+    class MySampleWidget extends Widget {
+        // get HTML to insert into content
+        init() {
+            super.init();
+        }
 
-    title() {
-        return 'My Sample Widget';
-    }
+        title() {
+            return 'My Sample Widget';
+        }
 
-    renderHtml() {
-        return '<div> A Simple Widget with 1 line of text </div>';
-    }
+        renderHtml() {
+            return '<div> A Simple Widget with 1 line of text </div>';
+        }
 
-    // custom behavior goes here...
+        // custom behavior goes here...
+</script>
 ```
 
 BuilderJS is written in a well designed structure, allowing easy and straightforward customization. For example, you can add your own widget to the library beside the default ones like Text, Image, Video, Social Network Icons, etc. See the right panel, `javascript` tab to find out how to write a custom widget.
