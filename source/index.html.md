@@ -41,7 +41,7 @@ This API documentation page was created with [Slate](https://github.com/lord/sla
     </head>
     <body>
         <script language="Javascript">
-            var builder = new Editor();
+            var builder = new Editor({ root: "/project/builderjs/" });
             builder.init();
         </script>
     </body>
@@ -56,8 +56,11 @@ Simply include the BuilderJS JavaScript and CSS files to your HTML page and init
 
 ![Default Blank Page](https://builderjs.s3.amazonaws.com/BuilderJS-00303.png "Default Blank Page")
 
+### Important
+Notice the `"root"` parameter which is important for BuilderJS to find the related resources. For example, if your BuilderJS source folder is available at `http://example.com/project/builderjs`, then you need to set your `"root"` value to `"/project/builderjs/"`. Remember to keep both leading and trailing slashes.
+
 <aside class="notice">
-Instantiate the <code>builder</code> variable without any parameters and use <code>init()</code> helper function is the easiest way to get started with the builder. See more advanced configuration options in the next sections of this document.
+Instantiate the <code>builder</code> object and use <code>init()</code> helper function is the easiest way to get started with the builder. See more advanced configuration options in the next sections of this document.
 </aside>
 
 ## Examples
@@ -72,6 +75,7 @@ BuilderJS also comes with a sample package so that you can quickly explore the b
 <script>
     // A more complicated setup
     var builder = new Editor({
+        root: '/project/builderjs/',
         url: 'http://example.com/template/02093403',
         saveUrl: 'http://example.com/save?id=02093403',
         saveMethod: 'POST',
@@ -85,10 +89,12 @@ BuilderJS also comes with a sample package so that you can quickly explore the b
     });
 </script>
 ```
+> Notice the `"root"` parameter which is important for BuilderJS to find the related resources. For example, if your builderjs source folder is available at `http://example.com/project/builderjs`, then you need to set your `"root"` value to `"/project/builderjs/"`. Remember to keep both leading and trailing slashes.
 
 See the right panel for a more complicated setup. See the **Configuration** section for advanced installation options which provide you more control over how the builder functions.
 
 By default, BuilderJS renders its HTML content to the `document.body` element of the page. i.e. the builder view will occupy the whole page. You can also configure it to render to a child element of your page.
+
 
 # Configuration
 
