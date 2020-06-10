@@ -1,0 +1,2 @@
+# Build to the build/ folder
+bundle exec middleman build
