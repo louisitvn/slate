@@ -1,2 +1,5 @@
 # Build to the build/ folder
 bundle exec middleman build
+
+# Start 
+bundle exec middleman server
