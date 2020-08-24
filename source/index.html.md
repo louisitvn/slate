@@ -57,7 +57,7 @@ Simply include the BuilderJS JavaScript and CSS files to your HTML page and init
 ![Default Blank Page](https://builderjs.s3.amazonaws.com/BuilderJS-00303.png "Default Blank Page")
 
 ## Important
-Notice the `"root"` parameter which is important for BuilderJS to find the related resources. For example, if your BuilderJS source folder is available at `http://example.com/project/builderjs/`, then you need to set your `"root"` value to an **absolute path** of `"/project/builderjs/"`. **Remember to keep both leading and trailing slashes**
+Notice the `"root"` parameter which is important for BuilderJS to find the related resources. For example, if your BuilderJS source folder is available at `http://example.com/project/builderjs/`, then you need to set your `"root"` value to an **absolute path** of `"/project/builderjs/"`. Remember to **add both leading and trailing slashes**
 
 <aside class="notice">
 Instantiate the <code>builder</code> object and use <code>init()</code> helper function is the easiest way to get started with the builder. See more advanced configuration options in the next sections of this document.
@@ -106,7 +106,7 @@ By default BuilderJS loads with a blank design for you to start making your own 
 
 ```html
 <script>
-    var builder = new Builder();
+    var builder = new Editor();
     builder.render(document.body);
     builder.load('<div> <h1>Awesome title</h1> <p> Page content... </p> </div>')
 </script>
@@ -128,7 +128,7 @@ Very often, your template is also available as a public URL. Then you can pass i
 
 ```html
 <script>
-    var builder = new Builder({
+    var builder = new Editor({
         url: 'http://example.com/template/2001990'
     });
 
