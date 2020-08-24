@@ -41,6 +41,14 @@ under the License.
     <% else %>
       <%= javascript_include_tag  "all_nosearch" %>
     <% end %>
+
+    <style type="text/css">
+      .logo {
+        width:40px;
+        height:40px;
+        display: inline-block;
+      }
+    </style>
   </head>
 
   <body class="<%= page_classes %>" data-languages="<%=h language_tabs.map{ |lang| lang.is_a?(Hash) ? lang.keys.first : lang }.to_json %>">
@@ -51,7 +59,10 @@ under the License.
       </span>
     </a>
     <div class="toc-wrapper">
-      <%= image_tag "logo.png", class: 'logo' %>
+      <div style="color:#ccc;padding-left:15px;padding-top:15px;display: flex;">
+        <%= image_tag "logo.png", class: 'logo' %>
+        <div style="margin-top:5px;margin-left:12px"><p style="margin:0">BUILDERJS</p><p style="margin:0">Version: 4.0</p></div>
+      </div>
       <% if language_tabs.any? %>
         <div class="lang-selector">
           <% language_tabs.each do |lang| %>

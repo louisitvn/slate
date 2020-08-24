@@ -8,7 +8,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - python
 
 toc_footers:
-  - <a href='#'>Download BuilderJS 2.0 Now</a>
+  - <a href='#'>Download BuilderJS 4.0 Now</a>
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
 includes:
@@ -19,7 +19,7 @@ search: true
 
 # Introduction
 
-Welcome to **BuilderJS 2.0**, the most powerful Email or Web Page Builder tool. BuilderJS is the easiest, quickest way to design elegant, mobile responsive emails or landing pages for your business.
+Welcome to **BuilderJS 4.0**, the most powerful Email or Web Page Builder tool. BuilderJS is the easiest, quickest way to design elegant, mobile responsive emails or landing pages for your business.
 
 BuilderJS is made in pure Javascript and HTML, making it easy to integrate with any web application no matter what the server-side programming language is (Java, .Net, PHP, Ruby on Rails, Python, etc.)
 
@@ -56,8 +56,8 @@ Simply include the BuilderJS JavaScript and CSS files to your HTML page and init
 
 ![Default Blank Page](https://builderjs.s3.amazonaws.com/BuilderJS-00303.png "Default Blank Page")
 
-### Important
-Notice the `"root"` parameter which is important for BuilderJS to find the related resources. For example, if your BuilderJS source folder is available at `http://example.com/project/builderjs`, then you need to set your `"root"` value to `"/project/builderjs/"`. Remember to keep both leading and trailing slashes.
+## Important
+Notice the `"root"` parameter which is important for BuilderJS to find the related resources. For example, if your BuilderJS source folder is available at `http://example.com/project/builderjs/`, then you need to set your `"root"` value to an **absolute path** of `"/project/builderjs/"`. **Remember to keep both leading and trailing slashes**
 
 <aside class="notice">
 Instantiate the <code>builder</code> object and use <code>init()</code> helper function is the easiest way to get started with the builder. See more advanced configuration options in the next sections of this document.
