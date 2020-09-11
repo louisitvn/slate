@@ -17,5 +17,5 @@ Error Code | Meaning
 503 | Service Unavailable -- We're temporarily offline for maintenance. Please try again later.
 
 <aside class="notice">
-As of version 2.0, there are two cases when BuilderJS makes an Ajax request to the server end. The first is for saving latest changes of the design view (see Storage section for more details), and the second is when it sends an asset (image or video). Server script should return <code>HTTP 200</code> for successful job and one of the error code above for failure
+As of version 4.0, there are two cases when BuilderJS makes an Ajax request to the server end. The first is for saving latest changes of the design view (see Storage section for more details), and the second is when it sends an asset (image or video). Server script should return <code>HTTP 200</code> for successful job and one of the error code above for failure
 </aside>

@@ -36,12 +36,12 @@ This API documentation page was created with [Slate](https://github.com/lord/sla
 ```html
 <html>
     <head>
-        <link rel="stylesheet" href="builderjs/builder.min.css"></link>
-        <script type='text/javascript' src="builderjs/builder.min.js"></script>
+        <link rel="stylesheet" href="/project/dist/builder.min.css"></link>
+        <script type='text/javascript' src="/project/dist/builder.min.js"></script>
     </head>
     <body>
         <script language="Javascript">
-            var builder = new Editor({ root: "/project/builderjs/" });
+            var builder = new Editor({ root: "/project/dist/" });
             builder.init();
         </script>
     </body>
@@ -57,7 +57,7 @@ Simply include the BuilderJS JavaScript and CSS files to your HTML page and init
 ![Default Blank Page](https://builderjs.s3.amazonaws.com/BuilderJS-00303.png "Default Blank Page")
 
 ## Important
-Notice the `"root"` parameter which is important for BuilderJS to find the related resources. For example, if your BuilderJS source folder is available at `http://example.com/project/builderjs/`, then you need to set your `"root"` value to an **absolute path** of `"/project/builderjs/"`. Remember to **add both leading and trailing slashes**
+Notice the `"root"` parameter which is important for BuilderJS to find the related resources. For example, if your BuilderJS distributable `dist/` folder is available at `http://example.com/project/dist/`, then you need to set your `"root"` value to an **absolute path** of `"/project/dist/"`. Remember to **add both leading and trailing slashes**
 
 <aside class="notice">
 Instantiate the <code>builder</code> object and use <code>init()</code> helper function is the easiest way to get started with the builder. See more advanced configuration options in the next sections of this document.
@@ -75,7 +75,7 @@ BuilderJS also comes with a sample package so that you can quickly explore the b
 <script>
     // A more complicated setup
     var builder = new Editor({
-        root: '/project/builderjs/',
+        root: '/project/dist/',
         url: 'http://example.com/template/02093403',
         saveUrl: 'http://example.com/save?id=02093403',
         saveMethod: 'POST',
@@ -89,7 +89,7 @@ BuilderJS also comes with a sample package so that you can quickly explore the b
     });
 </script>
 ```
-> Notice the `"root"` parameter which is important for BuilderJS to find the related resources. For example, if your builderjs source folder is available at `http://example.com/project/builderjs`, then you need to set your `"root"` value to `"/project/builderjs/"`. Remember to keep both leading and trailing slashes.
+> Notice the `"root"` parameter which is important for BuilderJS to find the related resources. For example, if your builderjs distributable (`dist`) is available at `http://example.com/project/dist/`, then you need to set your `"root"` value to `"/project/dist/"`. Remember to keep both leading and trailing slashes.
 
 See the right panel for a more complicated setup. See the **Configuration** section for advanced installation options which provide you more control over how the builder functions.
 
@@ -100,14 +100,13 @@ By default, BuilderJS renders its HTML content to the `document.body` element of
 
 ## Load a Template
 
-By default BuilderJS loads with a blank design for you to start making your own page / email. You can also start working with an existing email or page template by loading it into the design view. There are 2 options for loading an existing template
+By default BuilderJS loads with a blank design for you to start making your own HTML email or page. You can also start working with an existing email or page template by loading it into the design view. There are 2 ways of loading an existing template:
 
-### From HTML string
+### From an HTML string
 
 ```html
 <script>
-    var builder = new Editor();
-    builder.render(document.body);
+    var builder = new Editor({ root: '/project/dist/' });
     builder.load('<div> <h1>Awesome title</h1> <p> Page content... </p> </div>')
 </script>
 ```
@@ -122,13 +121,14 @@ html | [empty] | HTML content for loading to the viewer
 Loading a template from an HTML string is not a good practice and is, in general, not recommended. The preferred way is to load it from a public URL. See section below for details
 </aside>
 
-### From a URL
+### From a public URL
 
 Very often, your template is also available as a public URL. Then you can pass it to the `url` parameter to your builder initialization code. See example in the right panel
 
 ```html
 <script>
     var builder = new Editor({
+        root: '/project/dist/',
         url: 'http://example.com/template/2001990'
     });
 
@@ -155,6 +155,7 @@ Remember that BuildJS is a pure front-end application. Uploading a template to t
     // Initialize BuilderJS with tags
 
     var builder = new Editor({
+        root: '/project/dist/',
         tags: [
           {name: 'First Name', type: 'display'},
           {name: 'Last Name', type: 'display'},
@@ -246,6 +247,7 @@ var templates = [
 
 // Pass to the builder
 var builder = new Editor({
+    root: '/project/dist/',
     templates: templates
 });
 
@@ -285,6 +287,7 @@ You can also add your own widget to the list for using later on. BuilderJS suppo
     // See `php` or `ruby` tab to see how to
     // handle save request sent from builder in PHP and Ruby respectively
     var builder = new Editor({
+        root: '/project/dist/',
         url: 'http://example.com/template/02093403',
         saveUrl: 'http://example.com/save?id=02093403',
         saveMethod: 'POST'
@@ -394,7 +397,7 @@ token | CSRF token just in case your server requires it
 
 Since BuilderJS is a pure JavaScript library, accepting parameters passed to its initialization, it is open to any kind of integration no matter what your programming language or database system is.
 
-All its job is to load a template in HTML, allow user to make changes using its visual drag & drop or source edit then submit the changes to the server for storing.
+All its job is to load a template in HTML, allow user to make changes using its visual drag & drop or source edit then submit the changes to the server for storing. You can use PHP, Ruby, Python, Java, .NET or any other server side scripting language to handle BuilderJS requests. In the distributable package, we also include sample PHP scripts for saving, exporting, etc.
 
 # Customization
 
@@ -426,6 +429,6 @@ Documentation is being updated. In the mean time, please contact us for more det
 
 # SaaS Support
 
-BuilderJS is also pre-design for SaaS (Software as a Service). That is, you have full control of how BuilderJS features are available to your users. For example, you can always turn a feature ON or OFF for different types of users.
+BuilderJS is also suitable for SAAS (Software as a Service). That is, you have control of how BuilderJS features are available to your users. For example, you can always turn a feature ON or OFF for different classes of users.
 
 Documentation is being updated. In the mean time, please contact us for more details on this topic.
