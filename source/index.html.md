@@ -34,7 +34,7 @@ This API documentation page was created with [Slate](https://github.com/lord/sla
 > Put the following HTML / JavaScript code snippet to your HTML page. Make sure you update the reference paths `href` and `root` values accordingly to your setup:
 
 ```html
-<html>
+<!DOCTYPE html>
     <head>
         <link rel="stylesheet" href="/builderjs/dist/builder.css"></link>
         <script type='text/javascript' src="/builderjs/dist/builder.js"></script>
