@@ -8,7 +8,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - python
 
 toc_footers:
-  - <a href='#'>Download BuilderJS 4.0 Now</a>
+  - <a href='#'>Download BuilderJS 5.0 Now</a>
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
 includes:
@@ -19,7 +19,7 @@ search: true
 
 # Introduction
 
-Welcome to **BuilderJS 4.0**, the most powerful Email or Web Page Builder tool. BuilderJS is the easiest, quickest way to design elegant, mobile responsive emails or landing pages for your business.
+Welcome to **BuilderJS 5.0**, the most powerful HTML Email or Page builder tool. BuilderJS is the easiest, quickest way to design elegant, mobile responsive emails or landing pages for your business.
 
 BuilderJS is made in pure Javascript and HTML, making it easy to integrate with any web application no matter what the server-side programming language is (Java, .Net, PHP, Ruby on Rails, Python, etc.)
 
@@ -31,17 +31,17 @@ This API documentation page was created with [Slate](https://github.com/lord/sla
 
 ## Quick start
 
-> Put the following HTML / JavaScript code snippet to your HTML page:
+> Put the following HTML / JavaScript code snippet to your HTML page. Make sure you update the reference paths `href` and `root` values accordingly to your setup:
 
 ```html
 <html>
     <head>
-        <link rel="stylesheet" href="/project/dist/builder.min.css"></link>
-        <script type='text/javascript' src="/project/dist/builder.min.js"></script>
+        <link rel="stylesheet" href="/builderjs/dist/builder.css"></link>
+        <script type='text/javascript' src="/builderjs/dist/builder.js"></script>
     </head>
     <body>
         <script language="Javascript">
-            var builder = new Editor({ root: "/project/dist/" });
+            var builder = new Editor({ root: "/builderjs/dist/" });
             builder.init();
         </script>
     </body>
@@ -57,7 +57,7 @@ Simply include the BuilderJS JavaScript and CSS files to your HTML page and init
 ![Default Blank Page](https://builderjs.s3.amazonaws.com/BuilderJS-00303.png "Default Blank Page")
 
 ## Important
-Notice the `"root"` parameter which is important for BuilderJS to find the related resources. For example, if your BuilderJS distributable `dist/` folder is available at `http://example.com/project/dist/`, then you need to set your `"root"` value to an **absolute path** of `"/project/dist/"`. Remember to **add both leading and trailing slashes**
+Notice the `"root"` parameter which is important for BuilderJS to find the related resources. For example, if your BuilderJS distributable `dist/` folder is available at `http://example.com/builderjs/dist/`, then you need to set your `"root"` value to an **absolute path** of `"/builderjs/dist/"`. Remember to **add both leading and trailing slashes**
 
 <aside class="notice">
 Instantiate the <code>builder</code> object and use <code>init()</code> helper function is the easiest way to get started with the builder. See more advanced configuration options in the next sections of this document.
@@ -75,7 +75,7 @@ BuilderJS also comes with a sample package so that you can quickly explore the b
 <script>
     // A more complicated setup
     var builder = new Editor({
-        root: '/project/dist/',
+        root: '/builderjs/dist/',
         url: 'http://example.com/template/02093403',
         saveUrl: 'http://example.com/save?id=02093403',
         saveMethod: 'POST',
@@ -89,7 +89,7 @@ BuilderJS also comes with a sample package so that you can quickly explore the b
     });
 </script>
 ```
-> Notice the `"root"` parameter which is important for BuilderJS to find the related resources. For example, if your builderjs distributable (`dist`) is available at `http://example.com/project/dist/`, then you need to set your `"root"` value to `"/project/dist/"`. Remember to keep both leading and trailing slashes.
+> Notice the `"root"` parameter which is important for BuilderJS to find the related resources. For example, if your builderjs distributable (`dist`) is available at `http://example.com/builderjs/dist/`, then you need to set your `"root"` value to `"/builderjs/dist/"`. Remember to keep both leading and trailing slashes.
 
 See the right panel for a more complicated setup. See the **Configuration** section for advanced installation options which provide you more control over how the builder functions.
 
@@ -106,7 +106,7 @@ By default BuilderJS loads with a blank design for you to start making your own 
 
 ```html
 <script>
-    var builder = new Editor({ root: '/project/dist/' });
+    var builder = new Editor({ root: '/builderjs/dist/' });
     builder.load('<div> <h1>Awesome title</h1> <p> Page content... </p> </div>')
 </script>
 ```
@@ -128,7 +128,7 @@ Very often, your template is also available as a public URL. Then you can pass i
 ```html
 <script>
     var builder = new Editor({
-        root: '/project/dist/',
+        root: '/builderjs/dist/',
         url: 'http://example.com/template/2001990'
     });
 
@@ -155,7 +155,7 @@ Remember that BuildJS is a pure front-end application. Uploading a template to t
     // Initialize BuilderJS with tags
 
     var builder = new Editor({
-        root: '/project/dist/',
+        root: '/builderjs/dist/',
         tags: [
           {name: 'First Name', type: 'display'},
           {name: 'Last Name', type: 'display'},
@@ -247,7 +247,7 @@ var templates = [
 
 // Pass to the builder
 var builder = new Editor({
-    root: '/project/dist/',
+    root: '/builderjs/dist/',
     templates: templates
 });
 
@@ -287,7 +287,7 @@ You can also add your own widget to the list for using later on. BuilderJS suppo
     // See `php` or `ruby` tab to see how to
     // handle save request sent from builder in PHP and Ruby respectively
     var builder = new Editor({
-        root: '/project/dist/',
+        root: '/builderjs/dist/',
         url: 'http://example.com/template/02093403',
         saveUrl: 'http://example.com/save?id=02093403',
         saveMethod: 'POST'
