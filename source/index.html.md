@@ -8,7 +8,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - python
 
 toc_footers:
-  - <a href='#'>Download BuilderJS 5.0 Now</a>
+  - <a href='https://codecanyon.net/item/builderjs-html-email-page-builder/27146783'>Download BuilderJS 5.0 Now</a>
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
 includes:
