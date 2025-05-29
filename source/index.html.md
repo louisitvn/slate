@@ -19,19 +19,39 @@ search: true
 
 # Introduction
 
-Welcome to **BuilderJS 5.0**, the most powerful HTML Email or Page builder tool. BuilderJS is the easiest, quickest way to design elegant, mobile responsive emails or landing pages for your business.
+Welcome to **BuilderJS 6.0**, the most powerful HTML Email or Page builder tool. BuilderJS is the easiest, quickest way to design elegant, mobile responsive emails or landing pages for your business.
 
-BuilderJS is made in pure Javascript and HTML, making it easy to integrate with any web application no matter what the server-side programming language is (Java, .Net, PHP, Ruby on Rails, Python, etc.)
+BuilderJS is built using pure JavaScript and HTML, making it easy to integrate with any web application, regardless of the server-side programming language (e.g., Java, .NET, PHP, Ruby on Rails, Python, etc.).
 
-BuilderJS is made fully customizable and open to any integration scenario: you can make it a standalone web page or embed it into your own site. For example, when it comes to save user work, BuilderJS allows you to configure a Save URL, to which it will make a POST request, passing the latest updates to the server-side scripting for handling. The request is triggered when user clicks on Save button in the builder. And there are lots of other configuration settings allowing you to customize how it works and interacts with the other components.
+BuilderJS is fully customizable and designed for flexible integration scenarios. You can use it as a standalone application or embed it into your own web app, interacting with it through its simple and easy API. BuilderJS has been choosen by many popular frameworks as their site or email builder.
 
-This API documentation page was created with [Slate](https://github.com/lord/slate). Feel free to help contribute to the our documentation.
+Details of all available API methods are explained throughout this documentation.
 
 # Installation
 
-## Quick start
+## Include required files
 
 > Put the following HTML / JavaScript code snippet to your HTML page. Make sure you update the reference paths `href` and `root` values accordingly to your setup:
+
+```html
+<!DOCTYPE html>
+    <head>
+        <link rel="stylesheet" href="/builder.css"></link>
+        <script type='text/javascript' src="/builder.js"></script>
+    </head>
+</html>
+```
+
+> It's that simple! Include the whole HTML drag & drop builder to your webapp. In the next sections, we will explain how you can initialize and have it populate your page.
+
+There are 2 files which are shipped with BuilderJS bundle
+
+* builder.js - include all core functionality of BuilderJS
+* style.css - the default styles for BuilderJS, used for its controls and dashboard.
+
+
+
+## Initialize the builder
 
 ```html
 <!DOCTYPE html>
@@ -41,26 +61,114 @@ This API documentation page was created with [Slate](https://github.com/lord/sla
     </head>
     <body>
         <script language="Javascript">
-            var builder = new Editor({ root: "/builderjs/dist/" });
-            builder.init();
+            new BuilderJS({
+                mainContainer: '#main',
+                settingContainer: '#idDiv3',
+            });
         </script>
     </body>
 </html>
 ```
 
-> It's that simple! The builder's `init()` function will do the magic of rendering the entire builder view with its default settings and append it to your page's `body`.
+Once you have included BuilderJS .js file, the next step is to write JavaScript code to initalize the Builder. The example code on the right to see how to initalize a <code>builder</code> object with minimum configuration. After this step, you will have a <code>builder</code> object available for rendering in the next step
 
-BuilderJS comes with `init()` helper function allowing you to quickly initiate the builder and append it to your current web page.
+## Create a new page
 
-Simply include the BuilderJS JavaScript and CSS files to your HTML page and initiate it on page load. See sample code in the right panel, `javascript` tab, to see how easy it is to load a fully-functioning builder to your webpage. With minimum configuration like that, the builder loads with a default blank design page like below
+```html
+<!DOCTYPE html>
+    <head>
+        <link rel="stylesheet" href="/builderjs/dist/builder.css"></link>
+        <script type='text/javascript' src="/builderjs/dist/builder.js"></script>
+    </head>
+    <body>
+        <script language="Javascript">
+            var builder = new BuilderJS({
+                mainContainer: '#main',
+                settingContainer: '#idDiv3',
+                themeUrl: "/myAwesomeTheme/",
+            });
 
-![Default Blank Page](https://builderjs.s3.amazonaws.com/BuilderJS-00303.png "Default Blank Page")
 
-## Important
-Notice the `"root"` parameter which is important for BuilderJS to find the related resources. For example, if your BuilderJS distributable `dist/` folder is available at `http://example.com/builderjs/dist/`, then you need to set your `"root"` value to an **absolute path** of `"/builderjs/dist/"`. Remember to **add both leading and trailing slashes**
+            builder.init(theme = "/theme/abc");
+        </script>
+    </body>
+</html>
+```
+
+It is now time to load the builder to your browser. If you want to load a blank page for your new HTML page or Email design, execute the <code>init</code> function. See code example in the right panel.
+
+If configured correctly, the browser will be rendered to the browser and a new sample page will also be loaded like below:
+
+UPDATE-01 - thay 1 cái hình builder đẹp đẹp ở đây, với 1 cái theme đẹp đẹp nào đó
+
+![Default Blank Page](https://static.vecteezy.com/system/resources/previews/008/253/599/large_2x/future-technology-vr-virtual-universe-free-vector.jpg "Sample Builder page")
+
+Notice the "themeUrl" parameter of the init() function. As you can see, in order to load a blank page, you need to tell BuilderJS the theme to use. BuilderJS comes with many themes/templates available for users to choose from. See THEME section for a list of available themes to specify as well as more details about BuilderJS theme system.
+
+As a quick reference, below are some default themes that you can choose as well as how they look
+
+Name | Description
+--------- | -----------
+mailux | The default email theme, it is a clean and elegant theme suitable for all types of email
+minpage | The default website/page theme, it is simple and nice looking, suitable for getting started with.
+
+Below are some examples of different themes loaded to BuilderJS
+
+UPDATE-02 - Chọn một theme đẹp A
+
+![Theme Đẹp A](https://static.vecteezy.com/system/resources/previews/007/822/564/non_2x/virtual-universe-concept-free-vector.jpg "Theme Đẹp A")
+
+UPDATE-03 - Chọn một theme đẹp B
+
+![Theme Đẹp B](https://static.vecteezy.com/system/resources/previews/059/180/340/non_2x/young-woman-flying-on-a-big-bird-of-hope-to-the-stars-and-moon-in-hopes-of-peace-and-happiness-vector.jpg "Theme Đẹp B")
+
+
+## Open a saved work
+
+> hello
+
+```html
+<!DOCTYPE html>
+    <head>
+        <link rel="stylesheet" href="/builderjs/dist/builder.css"></link>
+        <script type='text/javascript' src="/builderjs/dist/builder.js"></script>
+    </head>
+    <body>
+        <script language="Javascript">
+            var builder = new BuilderJS({
+                mainContainer: '#main',
+                settingContainer: '#idDiv3',
+                themeUrl: "/myAwesomeTheme/",
+            });
+
+            var data = "<?php echo file_get_contents('/data/Pages/MyPage.json'); ?>";
+            builder.load(data);
+        </script>
+    </body>
+</html>
+```
+
+Rather than opening a blank page, normally, you might want to open a previous saved work to continue. Then you can execute the load() function. This function take a json storage of an HTML template and render it to the designer view. See example in the right panel.
+
+In the example, the <code>data</code> variable holds the entire JSON structure of an HTML page as a string. Then this string is passed to the load function of builder.
+
+## More about BuilderJS JSON storage
+
+BuilderJS stores design work in a JSON structure, which is a universal format which is supported by certain HTML builder. Normally, when users want to save their current work
+
+
+### Construction Parameters
+Below are the required construction parameters for BuilderJS
+
+Parameter | Description
+--------- | -----------
+mainContainer | The ID of the HTML element into which the builder design will be rendered
+settingContainer | The ID of the HTML element into which the builder settings will be rendered
+themeUrl | URL of the theme folder. BuilderJS comes with many themes and even more themes are coming.
+assetUploadHandler | URL of the server-side script (PHP, Python, .NET...) to handle files / images uploading
 
 <aside class="notice">
-Instantiate the <code>builder</code> object and use <code>init()</code> helper function is the easiest way to get started with the builder. See more advanced configuration options in the next sections of this document.
+**Note**: Like any other app, the builder should be loaded only after the page has fully loaded. Therefore, you should place the BuilderJS initialization code inside a <code>DOMContentLoaded</code> listener (or <code>$(document).ready()</code> if using jQuery) to ensure all DOM elements are available.
 </aside>
 
 ## Examples
@@ -282,17 +390,33 @@ You can also add your own widget to the list for using later on. BuilderJS suppo
 # Storage
 
 ```html
-<script>
-    // Initiate builder with `saveUrl`
-    // See `php` or `ruby` tab to see how to
-    // handle save request sent from builder in PHP and Ruby respectively
-    var builder = new Editor({
-        root: '/builderjs/dist/',
-        url: 'http://example.com/template/02093403',
-        saveUrl: 'http://example.com/save?id=02093403',
-        saveMethod: 'POST'
-    });
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+  <button id="btnSave">Save</button>
+
+  <script>
+
+    // Function that handles saving
+    function save() {
+      var data = builder.getJson();
+
+      $.ajax({
+        url: 'save.php',       // Your server-side script
+        data: JSON.stringify(data),
+        success: function (response) {
+          console.log("Save successful:", response);
+        },
+      });
+    }
+
+    // Assign click event
+    document.getElementById("btnSave").addEventListener("click", save);
+  </script>
+
+</body>
+</html>
 ```
 
 ```python
@@ -365,16 +489,13 @@ if ($conn->query($sql) === TRUE) {
 $conn->close();
 ```
 
-When it comes to save, **BuilderJS** allows you to specify a Save URI, to which it will make a POST request, passing the latest updates to the server side scripting for handling. The request is triggered when user clicks on Save button in the builder.
+Once you have initialized the builder, loaded a template or init a new page. You can start designing your pages & emails. WHen it comes to saving the current work for future editing, you will need to capture the current data on BuilderJS to save it to a storage like filesystem or MySQL.
 
-Actual job of storing the submitted content is handled by a server-side scripting language like PHP, Ruby, Python, Java, .Net, etc.
+Since BuilderJS is a pure JavaScript application which works on a browser, it does not actually store anything, it is when a server script is needed.
 
-Below is an example of how BuilderJS sends its content to the server. By default, when user clicks Save button, BuilderJS makes a `POST` request to the URL specified by `saveUrl` parameter passed to the builder construction method.
+The most common use case is to capture the current data of BuilderJS, using its API method <code>getJson()</code> and pass the result to a server script using Ajax for storing. See a mini example on the right to see how it works
 
-See sample code on the right panel, `javascript` tab to see how to specify a save URL mentioned above. See `php` or `ruby` or `python` tabs for sample code snippet that handles such request.
 
-### Sample POST request
-`POST http://example.com/template/save?id=02093403`
 
 ### Request header
 
