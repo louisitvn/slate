@@ -1,4 +1,4 @@
-# Errors
+# API Reference
 
 For reference, the following error codes should be used by the server side scripting to better communicate with BuilderJS
 
