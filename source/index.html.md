@@ -29,6 +29,41 @@ Details of all available API methods are explained throughout this documentation
 
 # Get quickly started
 
+```html
+<!DOCTYPE html>
+    <head>
+        <link rel="stylesheet" href="/builderjs/dist/builder.css"></link>
+        <script type='text/javascript' src="/builderjs/dist/builder.js"></script>
+    </head>
+    <body>
+        <script language="Javascript">
+            // ......
+
+            document.addEventListener('DOMContentLoaded', () => {
+                // Initialize the BuilderJS instance
+                window.builder = new BuilderJS({
+                    mainContainer: window.document.querySelector('#MainContainer'), // Main content render target
+                    settingsContainer: window.document.querySelector('#SettingsContainer'), // Sidebar settings panel
+                    themeUrl: '<?php echo $themeUrl ?>', // Absolute theme base URL
+                    assetUploadHandler: '/asset-upload.php', // Asset upload endpoint
+                    aiHandler: '/ai-handler.php', // API handler for ai related tasks
+                });
+
+                // Initialize BuilderJS and load the last saved state (if any).
+                builder.init(() => {
+                    // Load the saved page data for the current theme (if available)
+                    loadFromStore(document.getElementById('loadFromStoreButton'));
+                });
+
+                // ...
+            });
+
+            // ...
+        </script>
+    </body>
+</html>
+```
+
 When it comes to saving or publishing your HTML designs (e.g., when clicking the Save or Export button), Emotsy Builder sends the content to a server-side script. This script handles the content by either saving the current HTML design to storage or preparing it for download.
 
 The installation process is covered in detail in the Installation section. However, if you'd like to quickly see Emotsy Builder in action with its core features, follow these steps:
@@ -119,15 +154,15 @@ If configured correctly, the browser will be rendered to the browser and a new s
 
 UPDATE-01 - thay 1 cái hình builder đẹp đẹp ở đây, với 1 cái theme đẹp đẹp nào đó
 
-![Theme Đẹp A](https://static.vecteezy.com/system/resources/previews/008/253/599/large_2x/future-technology-vr-virtual-universe-free-vector.jpg "Sample Builder page")
+![Theme Đẹp A](images/screenshot-1.png "Sample Builder page")
 
 UPDATE-02 - Chọn một theme đẹp
 
-![Theme Đẹp B](https://static.vecteezy.com/system/resources/previews/007/822/564/non_2x/virtual-universe-concept-free-vector.jpg "Theme Đẹp A")
+![Theme Đẹp B](images/screenshot-2.png "Theme Đẹp A")
 
 UPDATE-03 - Chọn một theme đẹp
 
-![Theme Đẹp C](https://static.vecteezy.com/system/resources/previews/059/180/340/non_2x/young-woman-flying-on-a-big-bird-of-hope-to-the-stars-and-moon-in-hopes-of-peace-and-happiness-vector.jpg "Theme Đẹp B")
+![Theme Đẹp C](images/screenshot-3.png "Theme Đẹp B")
 
 
 ## Open a page
