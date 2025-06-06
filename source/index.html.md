@@ -241,9 +241,9 @@ Once executed, it will create a theme folder namely your_theme_name containing s
 
 **Note** The detailed specifications & guideline for working with a theme is still in development. Currently, Emotsy Builder team are working on this to publish more themes for Emotsy Builder users everyday. We will publish a comprehensive guideline soon so that any development team can create their own themes easily.
 
-# Server-script
+# Server Script
 
-## Save current page
+## Save
 
 ```html
 <!DOCTYPE html>
@@ -359,6 +359,13 @@ The most common approach is to use Emotsy Builder’s `getJson()` API method to 
 * Create a new page to design
 * Add a "Save" button, when it is clicked, get the builder data and send to the server's `save.php` script which stores HTML to a MySQL database.
 
+## Export, Publish and Download
+
+The next common task is to export your page to use it in reality. Once users have done with their design work and click on an Export button, it will pass the final HTML content to a server script to handle export tasks. Normally, it should be done via an Ajax request. See example on the right:
+
+Emotsy Builder supports a getHtml() method, allowing capturing the final HTML of page design.
+
+Upon receiving the HTML content, the server script can write it to a file and allow users to download the final HTML, which can be used to upload to a hosting environment.
 
 # Key Features
 
