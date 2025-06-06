@@ -42,8 +42,8 @@ Details of all available API methods are explained throughout this documentation
             document.addEventListener('DOMContentLoaded', () => {
                 // Initialize the BuilderJS instance
                 window.builder = new BuilderJS({
-                    mainContainer: window.document.querySelector('#MainContainer'), // Main content render target
-                    settingsContainer: window.document.querySelector('#SettingsContainer'), // Sidebar settings panel
+                    mainContainer: '#MainContainer', // Main content render target
+                    settingsContainer: '#SettingsContainer', // Sidebar settings panel
                     themeUrl: '<?php echo $themeUrl ?>', // Absolute theme base URL
                     assetUploadHandler: '/asset-upload.php', // Asset upload endpoint
                     aiHandler: '/ai-handler.php', // API handler for ai related tasks
