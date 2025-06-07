@@ -64,9 +64,9 @@ Details of all available API methods are explained throughout this documentation
 </html>
 ```
 
-When it comes to saving or publishing your HTML designs (e.g., when clicking the Save or Export button), Emotsy Builder sends the content to a server-side script. This script handles the content by either saving the current HTML design to storage or preparing it for download.
+When saving or publishing your HTML designs (e.g., by clicking the Save or Export button), Emotsy Builder sends the content to a server-side script. This script processes the content by either saving the current HTML design to storage or preparing it for download.
 
-The installation process is covered in detail in the Installation section. However, if you'd like to quickly see Emotsy Builder in action with its core features, follow these steps:
+The installation process is explained in detail in the Installation section. However, if you'd like a quick preview of Emotsy Builder in action with its core features, follow these steps:
 
 * Download the Emotsy Builder package.
 
@@ -74,22 +74,23 @@ The installation process is covered in detail in the Installation section. Howev
 
 * Open the corresponding URL in your browser to launch the demo: http://your-host.com/demo/
 
-That's it! you can now play around with your own instance of Emotsy Builder on your own hosting server.
+That's it! You can now explore your own instance of Emotsy Builder hosted on your server.
 
-The demo includes a sample index.php file that loads the required Emotsy Builder files. It also contains server-side scripts (written in PHP) to handle Emotsy Builder interactions such as SAVE and EXPORT. You can use the provided PHP script, or implement similar functionality in any server-side language you're familiar with such as Ruby, Perl, .NET, Java, etc.
+The demo includes a sample index.php file that loads the necessary Emotsy Builder resources. It also comes with server-side scripts (written in PHP) to handle interactions such as Save and Export. You can use the provided PHP scripts as-is or implement similar functionality in any server-side language you're comfortable with, such as Ruby, Perl, .NET, Java, and more.
 
 # Installation
 
-In the previous section, we provide a guideline to quickly run a demo installation of Emotsy Builder so that you can see how it works in your environment. In this section, we provide a step-by-step guideline to install Emotsy Builder as well as configure it to works with your server-side scripting.
+In the previous section, we provided a quick-start guide to help you run a demo installation of Emotsy Builder, allowing you to see how it works in your environment. In this section, we'll walk through a step-by-step guide to installing Emotsy Builder and configuring it to work with your server-side scripting.
 
-Basically, there are 2 parts of installation:
+There are two main parts to the installation:
 
-* The Emotsy Builder itself on the client side
-* The server-side script.
+* The Emotsy Builder frontend (client side)
 
-Explanation: Emotsy Builder itself works on the client side of a web application, i.e. in a browser, and it interacts with users, allowing them to build beautiful HTML pages. However, when it come to saving or publishing users' design work, you will need to capture the output of Emotsy Builder (i.e. HTML page) and pass it to a server-side script, which stores the HTML content to a storage or publish it (allowing users to download)
+* The server-side script
 
-In the next section, we guide how to set up Emotsy Builder and provide a sample demo of how to capture its data to pass to a server-side script for storing or exporting
+Explanation: Emotsy Builder runs entirely on the client side — in the user's browser — where it provides a visual interface for building beautiful HTML pages. However, when it comes to saving or publishing a user's design, you'll need to capture the output (the HTML content) and send it to a server-side script, which either saves the data or prepares it for download.
+
+In the next section, we'll show you how to set up Emotsy Builder and include a demo illustrating how to capture its output and pass it to a server-side script for storage or export.
 
 ## Include required files
 
@@ -148,26 +149,26 @@ Once you have included Emotsy Builder .js file, the next step is to write JavaSc
 </html>
 ```
 
-It is now time to load the builder to your browser. If you want to load a blank page for your new HTML page or Email design, execute the <code>init</code> function. See code example in the right panel. Notice the `themeUrl` parameter of construction method: it is required in order to initialize a new page. In Emotsy Builder, every page is created based on a theme which is comprised of a set of related styles and page elements. You can see some examples of a Emotsy Builder theme below:
+Now it's time to load the builder in your browser.
 
-If configured correctly, the browser will be rendered to the browser and a new sample page will also be loaded like below:
+If you want to start with a blank page for a new HTML or email design, execute the `init()` function. See the example code in the right panel.
 
-UPDATE-01 - thay 1 cái hình builder đẹp đẹp ở đây, với 1 cái theme đẹp đẹp nào đó
+Note the themeUrl parameter in the constructor method, this is required to initialize a new page. In Emotsy Builder, every page is created based on a theme, which consists of a set of related styles and page elements.
 
-![Theme Đẹp A](images/screenshot-1.png "Sample Builder page")
+If everything is configured correctly, the builder interface will be rendered in your browser, and a sample page like the one below will be loaded:
 
-UPDATE-02 - Chọn một theme đẹp
+![Theme A](images/screenshot-1.png "Sample A")
 
-![Theme Đẹp B](images/screenshot-2.png "Theme Đẹp A")
+Another sample:
+![Theme B](images/screenshot-2.png "Sample B")
 
-UPDATE-03 - Chọn một theme đẹp
-
-![Theme Đẹp C](images/screenshot-3.png "Theme Đẹp B")
+Yet another sample:
+![Theme C](images/screenshot-3.png "Sample C")
 
 
 ## Open a page
 
-Rather than creating a blank page, normally, you might want to open a previous saved work to continue the design work. Emotsy Builder supports some ways to load HTML content to its builder view.
+Rather than starting from a blank page, you’ll often want to load previously saved work to continue designing. Emotsy Builder supports multiple ways to load HTML content into the builder view.
 
 ### From JSON string
 
@@ -193,9 +194,11 @@ Rather than creating a blank page, normally, you might want to open a previous s
 </html>
 ```
 
-In the example, the `data` variable holds the entire JSON structure of an HTML page as a string. Then this string is passed to the load function of builder to load to the browser. In brief, Emotsy Builder pages are created in JSON format which can be stored in any storage like: filesystem, RDBMS, etc. Then it can be loaded to the design view.
+In this example, the data variable contains the entire JSON representation of an HTML page as a string. This string is then passed to the builder’s load function to display the content in the browser.
 
-Don't worry about the JSON format as well as how to create it, it will be covered in the Storage section below.
+Emotsy Builder pages are stored in JSON format, which can be saved in any type of storage — such as the file system, a relational database (RDBMS), and more. Later, the stored JSON can be loaded back into the design view.
+
+Don’t worry about the JSON format or how to generate it — this will be explained in the Storage section below.
 
 ### From URL
 
@@ -221,10 +224,13 @@ Don't worry about the JSON format as well as how to create it, it will be covere
 </html>
 ```
 
-Instead of loading the entire JSON data into a JavaScript variable like above, a more convenient way is to use the `loadFromUrl()` method to load JSON content from a remote URL. Suppose you have a page JSON stored on a server storage and is available at http://example.com/pages/MyPage.json, then you can load it as in the example.
+Instead of loading the entire JSON data into a JavaScript variable as shown earlier, a more convenient approach is to use the loadFromUrl() method to fetch JSON content from a remote URL.
 
-Don't worry about the JSON format as well as how to create it, it will be covered in the Storage section below.
-Below is the summary of construction parameters for Emotsy Builder
+For example, if your page's JSON data is stored on a server and accessible at http://example.com/pages/MyPage.json, you can load it using this method as shown in the example.
+
+Don’t worry about the JSON format or how to generate it — this will be covered in the Storage section below.
+
+Below is a summary of the constructor parameters for Emotsy Builder:
 
 Parameter | Description
 --------- | -----------
@@ -233,13 +239,15 @@ settingContainer | The ID of the HTML element into which the builder settings wi
 themeUrl | URL of the theme folder. Emotsy Builder comes with many themes and even more themes are coming.
 
 <aside class="notice">
-**Note**: Loading data from a URL is recommended over from a JSON string. When assigning a large JSON string to a vailable, it will increase your HTML page size, resulting in loading performance.
+Loading data from a URL is recommended over embedding a large JSON string directly in your code. Assigning a large JSON string to a JavaScript variable increases the size of your HTML page, which can negatively impact loading performance.
 </aside>
 
 
 # Theme & Template
 
-A theme is comprised of sample element templates of the same unified styles. Every website or page belongs to a theme. Some examples of theme:
+A theme consists of sample element templates that share a unified style. Every website or page in Emotsy Builder is based on a theme.
+
+Some examples of themes include:
 
 * Simple blogpost theme
 * Clean and element landing page theme
@@ -247,7 +255,9 @@ A theme is comprised of sample element templates of the same unified styles. Eve
 * Amazon-like online store
 * More...
 
-Themes & templates are at the center of Emotsy Builder. A theme is comprised of many element templates that users can quickly use (by drag and drop them into the page designer). Each theme has its own styles as well as a set of available components for users to choose from. Some example components of a theme:
+Themes and templates are at the core of Emotsy Builder. A theme consists of many element templates that users can quickly access by dragging and dropping them into the page designer. Each theme comes with its own unique styles and a predefined set of components for users to choose from.
+
+Some example components in a theme include:
 
 * Menu bar
 * Main banner
@@ -257,26 +267,40 @@ Themes & templates are at the center of Emotsy Builder. A theme is comprised of 
 * Footer area
 * Testinomial area
 
-Users can simply choose an element, drag and drop them into the designer view and modify the element phrases to quickly make their own page.
+Users can simply choose an element, drag and drop it into the designer view, and modify the element’s content to quickly create their own page.
 
 ## Create a theme
 
-Beside the available templates for Emotsy Builder, you can also create your own theme for Emotsy Builder to improve your users experience. The idea of creating a theme is
+Besides the available templates in Emotsy Builder, you can also create your own custom theme to enhance your users’ experience. The idea behind creating a theme is:
 
-* Design a beautiful web page or email templte
-* Break it into elements so that users can organize and customize them (drag and drop elements) the way they desire.
+Design a beautiful web page or email template.
 
-Then specify your theme in the Emotsy Builder construction so that users will be able to choose the theme. Below are the steps to create a theme for Emotsy Builder
+Break it into elements so users can organize and customize them by dragging and dropping elements as they desire.
 
-* Open your terminal
-* Go to the `builderjs/` folder
-* Execute the following command to generate a theme skeleton `generate theme your_theme_name`
+Then, specify your theme during the Emotsy Builder initialization so users can select it.
 
-Once executed, it will create a theme folder namely your_theme_name containing sample templates for your theme, ready to modify.
+Steps to create a theme for Emotsy Builder:
+Open your terminal.
 
-**Note** The detailed specifications & guideline for working with a theme is still in development. Currently, Emotsy Builder team are working on this to publish more themes for Emotsy Builder users everyday. We will publish a comprehensive guideline soon so that any development team can create their own themes easily.
+Navigate to the `builderjs/` folder.
+
+Execute the following command to generate a theme skeleton:
+
+`
+generate theme your_theme_name
+`
+
+After running the command, a new folder named your_theme_name will be created, containing sample templates for your theme, ready for modification.
+
+Note: The detailed specifications and guidelines for working with themes are still under development. The Emotsy Builder team is actively working to publish more themes for users every day. A comprehensive guideline will be released soon to help development teams create their own themes with ease.
 
 # Server Script
+
+Setting up Emotsy Builder involves certain steps, especially when configuring the page that wraps around it and interacts with it. However, this is intended by design: Emotsy Builder is built to be fully customizable.
+
+For example, Emotsy Builder does not include any default **SAVE** or **EXPORT** buttons. You will need to add these buttons yourself and handle their click events. When the user clicks the **SAVE** button, it should call the builder's `getJson()` API method to retrieve the current design. From there, it's up to you to handle the result—for instance, by sending it via an AJAX request to a server-side script that saves it to local storage, a database management system (DBMS), or remote storage such as AWS S3.
+
+By creating the buttons yourself, you're not limited to Emotsy Builder's default style—you’re free to place them anywhere on your page and style them however you like.
 
 ## Save
 
@@ -384,98 +408,39 @@ $conn->close();
 
 Once you have initialized the builder and either loaded a template or started a new page, you can begin designing your pages and emails.
 
-When it comes to saving your current work for future editing, you’ll need to capture the current data from Emotsy Builder and store it in a system like a filesystem or MySQL.
+To save your current work for future editing, you need to capture the current data from Emotsy Builder and store it in a system such as a filesystem or MySQL database.
 
-Since Emotsy Builder is a pure JavaScript application that runs in the browser, it does not store any data by itself—this is where a server-side script becomes necessary.
+Since Emotsy Builder is a pure JavaScript application running in the browser, it does not store any data by itself — this is where a server-side script becomes necessary.
 
-The most common approach is to use Emotsy Builder’s `getJson()` API method to capture the current state, then send the result to a server script via Ajax for storage. In this example, we implement the backend handler in PHP and Ruby, although you can implement it in any programming language you are familiar with. The key is to capture the input. Click on the `php` or `ruby` tab in the code sample panel to see the details. See the example on the right to understand how this works in practice.
+The most common approach is to use Emotsy Builder’s getJson() API method to capture the current state, then send the resulting data to a server script via Ajax for storage. In this example, we provide backend handlers implemented in PHP and Ruby, though you can use any programming language you prefer. The key point is capturing and handling the input.
+
+Click the php or ruby tabs in the code sample panel to see the details. Refer to the example on the right to understand how this works in practice.
+
+Summary of steps:
 
 * Load Emotsy Builder
+
 * Create a new page to design
-* Add a "Save" button, when it is clicked, get the builder data and send to the server's `save.php` script which stores HTML to a MySQL database.
+
+* Add a “Save” button that, when clicked, retrieves the builder data and sends it to the server’s save.php script, which stores the HTML content in a MySQL database.
+
+Instead of storing builder data to MySQL, you are free to handle it any way you want in your server-side script.
 
 ## Export, Publish and Download
 
-The next common task is to export your page to use it in reality. Once users have done with their design work and click on an Export button, it will pass the final HTML content to a server script to handle export tasks. Normally, it should be done via an Ajax request. See example on the right:
+The next common task is exporting the page for real-world use. Once users finish their design and click the **Export** button, the final HTML content is sent to a server-side script that handles the export process—typically via an AJAX request. See the example on the right.
 
-Emotsy Builder supports a getHtml() method, allowing capturing the final HTML of page design.
+Emotsy Builder provides a `getHtml()` method that captures the final HTML of the designed page.
 
-Upon receiving the HTML content, the server script can write it to a file and allow users to download the final HTML, which can be used to upload to a hosting environment.
+After receiving the HTML content, the server script can save it to a file and make it available for download. The exported HTML file can then be uploaded to a hosting environment.
 
-# Key Features
-
-## Visual Drag & Drop
-
-Emotsy Builder comes as a fully-functioned visual Drag & Drop editor, allowing you to quickly build your page or email templates without any hassle. Simply open a page and design it by dragging and dropping elements to your page content.
-
-## Template
-
-```html
-<script>
-// Pass a list of available templates to the builder
-// which will be available for user to choose from
-// by going to Design > New From A Template
-
-// List of available templates
-var templates = [
-  {
-      name: 'My Awesome Template 1',
-      url: 'http://example.com/template/030331',
-      thumbnail: 'http://example.com/template/030331/thumb.png'
-  }, {
-      name: 'My Awesome Template 2',
-      url: 'http://example.com/template/030332',
-      thumbnail: 'http://example.com/template/030332/thumb.png'
-  }, {
-      name: 'My Awesome Template 3',
-      url: 'http://example.com/template/030333',
-      thumbnail: 'http://example.com/template/030333/thumb.png'
-  }, {
-      name: 'My Awesome Template 4',
-      url: 'http://example.com/template/030334',
-      thumbnail: 'templates/030334/thumb.png'
-  }
-];
-
-// Pass to the builder
-var builder = new Editor({
-    root: '/builderjs/dist/',
-    templates: templates
-});
-
-</script>
-```
-
-> Notice that `templates` parameter expects an array of templates, each with `name`, `url` and `thumbnail`
-
-Emotsy Builder allows you to create new blank workspace and build your design from scratch.
-However, most of the time, you may want to start making your own email or page design from an existing template, then taylor it to your own needs.
-
-You can also pass a list of available templates to Emotsy Builder, and it will in turn show up to user for choosing from, by going to `Design > New From Template`
-
-![Available Templates selection](https://builderjs.s3.amazonaws.com/Emotsy Builder-Template-Selection.png "Available Templates selection")
-
-See example on the right to find out how to pass a list of available templates to your builder.
-
-## Responsive
-
-Emotsy Builder supports making email or pages that are fully responsive. You can preview your design with a PC, tablet or mobile phone simulator supported by Emotsy Builder. It is to make sure your email or page will show up correctly in reality
-
-## HTML Widgets
-
-Emotsy Builder comes with lots of pre-defined HTML widgets (or block or common HTML content) like image box, text box, divider, page footer, email signature, banner, etc. providing you everything you need to build an email or page
-
-## Custom Widgets
-
-You can also add your own widget to the list for using later on. Emotsy Builder supports "Add to widget library" feature, allowing you to select an element or group of elements to become a widget.
-
-![Add to widget](https://builderjs.s3.amazonaws.com/Emotsy Builder-Add-To-Widget.png "Add to widget")
 
 # Integration
 
-Since Emotsy Builder is a pure JavaScript library, accepting parameters passed to its initialization, it is open to any kind of integration no matter what your programming language or database system is.
+Since Emotsy Builder is a pure JavaScript library that accepts parameters during initialization, it can be integrated with any programming language or database system.
 
-All its job is to load a template in HTML, allow user to make changes using its visual drag & drop or source edit then submit the changes to the server for storing. You can use PHP, Ruby, Python, Java, .NET or any other server side scripting language to handle Emotsy Builder requests. In the distributable package, we also include sample PHP scripts for saving, exporting, etc.
+Its main function is to load an HTML template, allow users to make changes via visual drag-and-drop or source editing, and then submit those changes to the server for storage. You can use PHP, Ruby, Python, Java, .NET, or any other server-side scripting language to handle Emotsy Builder requests. The distributable package also includes sample PHP scripts for saving, exporting, and more.
+
 
 # Customization
 
@@ -499,14 +464,8 @@ All its job is to load a template in HTML, allow user to make changes using its 
 </script>
 ```
 
-Emotsy Builder is written in a well designed structure, allowing easy and straightforward customization. For example, you can add your own widget to the library beside the default ones like Text, Image, Video, Social Network Icons, etc. See the right panel, `javascript` tab to find out how to write a custom widget.
+Emotsy Builder is written with a well-designed structure that allows for easy and straightforward customization. For example, you can add your own custom widget to the library alongside the default ones such as Text, Image, Video, Social Network Icons, and more. Check the right panel’s JavaScript tab to learn how to create a custom widget.
 
-By extending the Widget base class, your `MySampleWidget` will automatically inherit all behaviors of a common widget like drag & drop enabled, move/duplicate/delete support. You can specify its own characteristics like title, thumbnail, etc. by overwriting the corresponding methods.
+By extending the Widget base class, your MySampleWidget will automatically inherit all the common widget behaviors like drag-and-drop functionality, and support for moving, duplicating, and deleting. You can also define its own characteristics, such as title and thumbnail, by overriding the corresponding methods.
 
-Documentation is being updated. In the mean time, please contact us for more details on this topic.
-
-# SaaS Support
-
-Emotsy Builder is also suitable for SAAS (Software as a Service). That is, you have control of how Emotsy Builder features are available to your users. For example, you can always turn a feature ON or OFF for different classes of users.
-
-Documentation is being updated. In the mean time, please contact us for more details on this topic.
+Documentation is currently being updated. In the meantime, please contact us for more details on this topic.
