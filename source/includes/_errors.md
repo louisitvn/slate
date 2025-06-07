@@ -17,5 +17,5 @@ Error Code | Meaning
 503 | Service Unavailable -- We're temporarily offline for maintenance. Please try again later.
 
 <aside class="notice">
-As of version 4.0, there are two cases when Builder makes an Ajax request to the server end. The first is for saving latest changes of the design view (see Storage section for more details), and the second is when it sends an asset (image or video). Server script should return <code>HTTP 200</code> for successful job and one of the error code above for failure
+As you can see, getting Builder up and running involves a few steps. This is because Builder was intentionally designed to be fully customizable. While the documentation is continuously being updated, please feel free to contact the development team for further details on integrating Builder with your application. Thank you!
 </aside>

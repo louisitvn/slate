@@ -104,7 +104,7 @@ In the next section, we'll show you how to set up Emotsy Builder and include a d
     </head>
     <body>
         <script language="Javascript">
-            var builder = new Emotsy Builder({
+            var builder = new Builder({
                 mainContainer: '#main',
                 settingContainer: '#idDiv3',
             });
@@ -136,7 +136,7 @@ Once you have included Emotsy Builder .js file, the next step is to write JavaSc
     </head>
     <body>
         <script language="Javascript">
-            var builder = new Emotsy Builder({
+            var builder = new Builder({
                 mainContainer: '#main',
                 settingContainer: '#idDiv3',
                 themeUrl: "/myAwesomeTheme/", // required by init() function
@@ -182,7 +182,7 @@ Rather than starting from a blank page, you’ll often want to load previously s
     </head>
     <body>
         <script language="Javascript">
-            var builder = new Emotsy Builder({
+            var builder = new Builder({
                 mainContainer: '#main',
                 settingContainer: '#idDiv3',
             });
@@ -212,7 +212,7 @@ Don’t worry about the JSON format or how to generate it — this will be expla
     </head>
     <body>
         <script language="Javascript">
-            var builder = new Emotsy Builder({
+            var builder = new Builder({
                 mainContainer: '#main',
                 settingContainer: '#idDiv3',
             });
@@ -237,6 +237,8 @@ Parameter | Description
 mainContainer | The ID of the HTML element into which the builder design will be rendered
 settingContainer | The ID of the HTML element into which the builder settings will be rendered
 themeUrl | URL of the theme folder. Emotsy Builder comes with many themes and even more themes are coming.
+assetUploadHandler | URL of the server-side script which handles assets uploading
+aiHandler | URL of the server-side script which handles AI features. See our example writen in PHP for reference.
 
 <aside class="notice">
 Loading data from a URL is recommended over embedding a large JSON string directly in your code. Assigning a large JSON string to a JavaScript variable increases the size of your HTML page, which can negatively impact loading performance.
@@ -435,61 +437,6 @@ The next common task is exporting the page for real-world use. Once users finish
 Emotsy Builder provides a `getHtml()` method that captures the final HTML of the designed page.
 
 After receiving the HTML content, the server script can save it to a file and make it available for download. The exported HTML file can then be uploaded to a hosting environment.
-
-// List of available templates
-var templates = [
-  {
-      name: 'My Awesome Template 1',
-      url: 'http://example.com/template/030331',
-      thumbnail: 'http://example.com/template/030331/thumb.png'
-  }, {
-      name: 'My Awesome Template 2',
-      url: 'http://example.com/template/030332',
-      thumbnail: 'http://example.com/template/030332/thumb.png'
-  }, {
-      name: 'My Awesome Template 3',
-      url: 'http://example.com/template/030333',
-      thumbnail: 'http://example.com/template/030333/thumb.png'
-  }, {
-      name: 'My Awesome Template 4',
-      url: 'http://example.com/template/030334',
-      thumbnail: 'templates/030334/thumb.png'
-  }
-];
-
-// Pass to the builder
-var builder = new Editor({
-    root: '/builder/dist/',
-    templates: templates
-});
-
-</script>
-```
-
-> Notice that `templates` parameter expects an array of templates, each with `name`, `url` and `thumbnail`
-
-Emotsy Builder allows you to create new blank workspace and build your design from scratch.
-However, most of the time, you may want to start making your own email or page design from an existing template, then taylor it to your own needs.
-
-You can also pass a list of available templates to Emotsy Builder, and it will in turn show up to user for choosing from, by going to `Design > New From Template`
-
-![Available Templates selection](https://builder.s3.amazonaws.com/Emotsy Builder-Template-Selection.png "Available Templates selection")
-
-See example on the right to find out how to pass a list of available templates to your builder.
-
-## Responsive
-
-Emotsy Builder supports making email or pages that are fully responsive. You can preview your design with a PC, tablet or mobile phone simulator supported by Emotsy Builder. It is to make sure your email or page will show up correctly in reality
-
-## HTML Widgets
-
-Emotsy Builder comes with lots of pre-defined HTML widgets (or block or common HTML content) like image box, text box, divider, page footer, email signature, banner, etc. providing you everything you need to build an email or page
-
-## Custom Widgets
-
-You can also add your own widget to the list for using later on. Emotsy Builder supports "Add to widget library" feature, allowing you to select an element or group of elements to become a widget.
-
-![Add to widget](https://builder.s3.amazonaws.com/Emotsy Builder-Add-To-Widget.png "Add to widget")
 
 # Integration
 
