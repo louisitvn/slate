@@ -78,6 +78,10 @@ That's it! You can now explore your own instance of Emotsy Builder hosted on you
 
 The demo includes a sample `index.php` file that loads the necessary Emotsy Builder resources. It also comes with server-side scripts (written in PHP) to handle interactions such as Save and Export. You can use the provided PHP scripts as-is or implement similar functionality in any server-side language you're comfortable with, such as Ruby, Perl, .NET, Java, and more.
 
+<aside class="notice">
+As you can see, getting Builder up and running involves a few steps with certain required parameters. This is because Builder was intentionally designed to be fully customizable. While the documentation is continuously being updated, please feel free to contact the development team for further details on integrating Builder with your application. Thank you!
+</aside>
+
 # Installation
 
 In the previous section, we provided a quick-start guide to help you run a demo installation of Emotsy Builder, allowing you to see how it works in your environment. In this section, we'll walk through a step-by-step guide to installing Emotsy Builder and configuring it to work with your server-side scripting.
@@ -245,7 +249,7 @@ Loading data from a URL is recommended over embedding a large JSON string direct
 </aside>
 
 
-# Theme & Template
+# Theme & template
 
 A theme consists of sample element templates that share a unified style. Every website or page in Emotsy Builder is based on a theme.
 
@@ -298,7 +302,7 @@ After running the command, a new folder named your_theme_name will be created, c
 
 Note: The detailed specifications and guidelines for working with themes are still under development. The Emotsy Builder team is actively working to publish more themes for users every day. A comprehensive guideline will be released soon to help development teams create their own themes with ease.
 
-# Server Script
+# Server script
 
 Setting up Emotsy Builder involves certain steps, especially when configuring the page that wraps around it and interacts with it. However, this is intended by design: Emotsy Builder is built to be fully customizable.
 
