@@ -1,6 +1,6 @@
-# API Reference
+# Error codes
 
-For reference, the following error codes should be used by the server side scripting to better communicate with Builder
+For reference, the following error codes should be used by the server side scripting to better communicate with Emotsy Builder. When the server-side script returns the correct error code in the AJAX response, Emotsy Builder will be able to display the corresponding messages in the appropriate format.
 
 Error Code | Meaning
 ---------- | -------
