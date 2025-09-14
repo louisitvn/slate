@@ -8,7 +8,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - python
 
 toc_footers:
-  - <a href='https://codecanyon.net/item/emotsy-visual-web-page-builder/58460316'>Get BuilderJS 6.0</a>
+  - <a href='https://codecanyon.net/item/builderjs-html-email-page-builder/27146783'>Get BuilderJS 6.0</a>
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
 includes:
@@ -79,7 +79,7 @@ The installation process is explained in detail in the Installation section. How
 
 * **Step 1**. Download the BuilderJS package you get from your purchase, it is a .zip file containing the core JavaScript files as well as a fully-working demo which helps you quickly get started.
 
-* **Step 2**. Extract the Emotsy's .zip package and copy its `demo` folder to your web server's document root, for example `/var/www/demo`. You can find in the right sample virtual host configuration for Apache and Nginx.
+* **Step 2**. Extract the BuilderJS's .zip package and copy its `demo` folder to your web server's document root, for example `/var/www/demo`. You can find in the right sample virtual host configuration for Apache and Nginx.
 
 * **Step 3**. Make sure your Apache or Nginx web application server is running, then open the corresponding URL in your browser to launch the demo, for example: `http://localhost/demo/`
 
@@ -554,10 +554,10 @@ Ensure your page looks stunning on every screen size with BuilderJS's responsive
 Let AI accelerate your creative process like never before. BuilderJS's built-in AI assistant can automatically generate meaningful headlines, filler text, calls to action, and even full sections of your page content—all based on your instructions or theme. It can fix grammar, rewrite text, suggest better phrasing, and ensure a consistent tone across your design. Whether you're stuck on copy or in a rush, AI helps you move forward with quality content in seconds.
 
 ## Universal Template Format
-BuilderJS is powered by a flexible, human-readable markup language designed for real-world design and development workflows. Whether you're a designer looking to make your template editable or a developer integrating dynamic content, Emotsy's format makes it easy. Convert your static HTML designs into reusable themes that work seamlessly inside the builder—complete with editable zones, smart components, and modular layouts. This universal format bridges the gap between creativity and productivity.
+BuilderJS is powered by a flexible, human-readable markup language designed for real-world design and development workflows. Whether you're a designer looking to make your template editable or a developer integrating dynamic content, BuilderJS's format makes it easy. Convert your static HTML designs into reusable themes that work seamlessly inside the builder—complete with editable zones, smart components, and modular layouts. This universal format bridges the gap between creativity and productivity.
 
 ## Clean & Semantic HTML Output
-Every page you build with Emotsy is backed by professionally structured, semantic HTML code—optimized for real-world use. Whether you're deploying to production, integrating with a CMS, or sending as part of an email campaign, you can trust the code is lightweight, accessible, and compliant with best practices. SEO experts, accessibility auditors, and developers alike will appreciate the minimalistic yet meaningful output, making integration and maintenance a breeze.
+Every page you build with BuilderJS is backed by professionally structured, semantic HTML code—optimized for real-world use. Whether you're deploying to production, integrating with a CMS, or sending as part of an email campaign, you can trust the code is lightweight, accessible, and compliant with best practices. SEO experts, accessibility auditors, and developers alike will appreciate the minimalistic yet meaningful output, making integration and maintenance a breeze.
 
 ## Revision History
 Never worry about making a mistake again. BuilderJS includes powerful version history tracking, so you can experiment freely and revert back to any previous version of your design with a single click. Automatic saving ensures your work is protected in real time, and manual checkpoints let you capture key design milestones. Whether you're A/B testing layouts or fixing an accidental change, revision history gives you peace of mind and total creative freedom.
@@ -578,7 +578,7 @@ Some examples of HTML elements in a theme include:
 
 Users can simply choose an element, drag and drop it into the designer view, and modify the element's content to make up their own page.
 
-In addition to the available templates in BuilderJS, you can also create custom themes to enhance your users' experience. To create a theme for Emotsy, you'll need to understand its theme markup language and conventions. Generally, the process of creating an Emotsy theme involves the following steps:
+In addition to the available templates in BuilderJS, you can also create custom themes to enhance your users' experience. To create a theme for BuilderJS, you'll need to understand its theme markup language and conventions. Generally, the process of creating an BuilderJS theme involves the following steps:
 
 * Step 1: Design a visually appealing HTML template that includes all possible elements.
 * Step 2: Break the template into smaller HTML components, each wrapped with BuilderJS's custom markup.
@@ -590,10 +590,10 @@ Detailed specifications and guidelines for working with themes are still in deve
 
 Issue | Solution
 ------- | --------
-Page blank | When loading our pre-built demo folder, if you see that the page is just blank without any content, then it is very likely that the core files `emotsy.js` is not referenced correctly. Make sure you use the correct absolute or relative path to the file.
+Page blank | When loading our pre-built demo folder, if you see that the page is just blank without any content, then it is very likely that the core files `builder.js` is not referenced correctly. Make sure you use the correct absolute or relative path to the file.
 Element not found error | Sometimes, you might get a blank page with such message. Check the `mainContainer` parameter you pass to the builder and ensure it matches the valid ID of an HTML element that serves as the container for BuilderJS’s rendering. Notice that it should be an ID string which is compatible with CSS selector.
 Page frozen | In certain cases, the browser may become frozen and unresponsive after a while. This is very likely caused by a JavaScript function running in an infinite loop. Often, the issue stems from event handler code, particularly the changed event. Make sure you do not execute long-running functions in your changed event handler, as this event is triggered very frequently during user interactions.
-Styles broken | If the page loads but appears without proper styles, it’s very likely that the `emotsy.css` file is not correctly referenced. Verify that you’re using the correct path to the CSS file.
+Styles broken | If the page loads but appears without proper styles, it’s very likely that the `builder.css` file is not correctly referenced. Verify that you’re using the correct path to the CSS file.
 Error saving or exporting | Save and export operations are handled by server-side scripts. To debug issues, check your server’s log files for details. Alternatively, you can wrap your server script in a try/catch block to return readable exception messages to the browser. See the Error codes table below for a list of supported HTTP status codes.
 
 # Customization
