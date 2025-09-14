@@ -1,5 +1,5 @@
 ---
-title: Emotsy Visual Web Builder API Reference
+title: BuilderJS API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - html
@@ -8,7 +8,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - python
 
 toc_footers:
-  - <a href='https://codecanyon.net/item/emotsy-visual-web-page-builder/58460316'>Get Emotsy Builder 6.0</a>
+  - <a href='https://codecanyon.net/item/emotsy-visual-web-page-builder/58460316'>Get BuilderJS 6.0</a>
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
 includes:
@@ -19,17 +19,17 @@ search: true
 
 # Introduction
 
-Welcome to **Emotsy Visual Web Builder 6.0** (here-in-after referred to as Emotsy Builder), the most powerful HTML web designer tool. Emotsy Builder is the easiest, quickest way to design elegant, mobile responsive HTML pages and emails for your business.
+Welcome to **BuilderJS 6.0**, the most powerful HTML web designer tool. BuilderJS is the easiest, quickest way to design elegant, mobile responsive HTML pages and emails for your business.
 
-Emotsy Builder is built using pure JavaScript and HTML, making it easy to integrate with any web application, regardless of the server-side programming language (e.g., Java, .NET, PHP, Ruby on Rails, Python, etc.).
+BuilderJS is built using pure JavaScript and HTML, making it easy to integrate with any web application, regardless of the server-side programming language (e.g., Java, .NET, PHP, Ruby on Rails, Python, etc.).
 
-Emotsy Builder is fully customizable and designed for flexible integration scenarios. You can use it as a standalone application or embed it into your own web app, interacting with it through its simple and easy API. Emotsy Builder has been choosen by many popular frameworks as their HTML designer on the web UI.
+BuilderJS is fully customizable and designed for flexible integration scenarios. You can use it as a standalone application or embed it into your own web app, interacting with it through its simple and easy API. BuilderJS has been choosen by many popular frameworks as their HTML designer on the web UI.
 
 Details of all available API methods are explained throughout this documentation.
 
 # System requirements
 
-Emotsy Builder runs in a web browser and interacts with server-side scripts through standard AJAX requests and JavaScript methods that are supported by all modern browsers. That means Emotsy Builder can run on virtually any browser, including but not limited to:
+BuilderJS runs in a web browser and interacts with server-side scripts through standard AJAX requests and JavaScript methods that are supported by all modern browsers. That means BuilderJS can run on virtually any browser, including but not limited to:
 
 * Google Chrome
 * Mozilla Firefox
@@ -37,8 +37,8 @@ Emotsy Builder runs in a web browser and interacts with server-side scripts thro
 * Apple Safari
 * Opera
 
-Emotsy Builder may not be compatible with the legacy Internet Explorer: it might work, but functionality is not guaranteed.
-As a JavaScript-based application, Emotsy Builder is independent of both the operating system and the server-side scripting technology used.
+BuilderJS may not be compatible with the legacy Internet Explorer: it might work, but functionality is not guaranteed.
+As a JavaScript-based application, BuilderJS is independent of both the operating system and the server-side scripting technology used.
 
 # Get quickly started
 
@@ -75,37 +75,37 @@ server {
     }
 }
 ```
-The installation process is explained in detail in the Installation section. However, if you'd like a quick preview of Emotsy Builder in action with its core features, simply follow this **no-configuration installation guideline**:
+The installation process is explained in detail in the Installation section. However, if you'd like a quick preview of BuilderJS in action with its core features, simply follow this **no-configuration installation guideline**:
 
-* **Step 1**. Download the Emotsy Builder package you get from your purchase, it is a .zip file containing the core JavaScript files as well as a fully-working demo which helps you quickly get started.
+* **Step 1**. Download the BuilderJS package you get from your purchase, it is a .zip file containing the core JavaScript files as well as a fully-working demo which helps you quickly get started.
 
 * **Step 2**. Extract the Emotsy's .zip package and copy its `demo` folder to your web server's document root, for example `/var/www/demo`. You can find in the right sample virtual host configuration for Apache and Nginx.
 
 * **Step 3**. Make sure your Apache or Nginx web application server is running, then open the corresponding URL in your browser to launch the demo, for example: `http://localhost/demo/`
 
-That's it! You can now explore your own instance of Emotsy Builder hosted on your server like below:
+That's it! You can now explore your own instance of BuilderJS hosted on your server like below:
 
 ![Theme A](images/screenshot-1.png "Sample A")
 
-The demo includes a sample `index.php` file that loads the necessary Emotsy Builder resources. It also comes with with a default set of server-side scripts (written in PHP) to handle essential features such as Save and Export. You can use the provided PHP scripts as-is or implement similar functionality in any server-side language you're comfortable with, such as Ruby, Perl, .NET, Java, and more.
+The demo includes a sample `index.php` file that loads the necessary BuilderJS resources. It also comes with with a default set of server-side scripts (written in PHP) to handle essential features such as Save and Export. You can use the provided PHP scripts as-is or implement similar functionality in any server-side language you're comfortable with, such as Ruby, Perl, .NET, Java, and more.
 
 <aside class="notice">
-As you can see, getting Emotsy Builder up and running involves a few steps with certain required parameters. This is because Emotsy Builder was intentionally designed to be fully customizable. While the documentation is continuously being updated, please feel free to contact the development team for further details on integrating Builder with your application. Thank you!
+As you can see, getting BuilderJS up and running involves a few steps with certain required parameters. This is because BuilderJS was intentionally designed to be fully customizable. While the documentation is continuously being updated, please feel free to contact the development team for further details on integrating Builder with your application. Thank you!
 </aside>
 
 # Installation
 
-In the previous section, we provided a quick-start guide to help you run a demo installation of Emotsy Builder, allowing you to see how it works in your environment. In this section, we'll walk through a step-by-step guide to installing Emotsy Builder and configuring it to work with your server-side scripting.
+In the previous section, we provided a quick-start guide to help you run a demo installation of BuilderJS, allowing you to see how it works in your environment. In this section, we'll walk through a step-by-step guide to installing BuilderJS and configuring it to work with your server-side scripting.
 
 There are two main parts to the installation:
 
-* The Emotsy Builder frontend (client side)
+* The BuilderJS frontend (client side)
 
 * The server-side script
 
-Explanation: Emotsy Builder runs entirely on the client side - in the user's browser - where it provides a visual interface for building beautiful HTML pages. However, when it comes to saving or publishing a user's design, you'll need to capture the output (the HTML content) and send it to a server-side script, which either saves the data or prepares it for download.
+Explanation: BuilderJS runs entirely on the client side - in the user's browser - where it provides a visual interface for building beautiful HTML pages. However, when it comes to saving or publishing a user's design, you'll need to capture the output (the HTML content) and send it to a server-side script, which either saves the data or prepares it for download.
 
-In the next section, we'll show you how to set up Emotsy Builder and include a demo illustrating how to capture its output and pass it to a server-side script for storage or export.
+In the next section, we'll show you how to set up BuilderJS and include a demo illustrating how to capture its output and pass it to a server-side script for storage or export.
 
 ## Include required files
 
@@ -126,14 +126,14 @@ In the next section, we'll show you how to set up Emotsy Builder and include a d
 </html>
 ```
 
-There are 2 files which are shipped with Emotsy Builder bundle
+There are 2 files which are shipped with BuilderJS bundle
 
-* builder.js - include all core functionality of Emotsy Builder
-* style.css - the default styles for Emotsy Builder, used for its controls and dashboard.
+* builder.js - include all core functionality of BuilderJS
+* style.css - the default styles for BuilderJS, used for its controls and dashboard.
 
 Optionally, you can include Bootstrap CSS to improve userbility experience.
 
-Once you have included Emotsy Builder .js file, the next step is to write JavaScript code to initalize the Builder. The example code on the right to see how to initalize a `builder` object with minimum configuration. After this step, you will have a `builder` object available for rendering in the next step.
+Once you have included BuilderJS .js file, the next step is to write JavaScript code to initalize the Builder. The example code on the right to see how to initalize a `builder` object with minimum configuration. After this step, you will have a `builder` object available for rendering in the next step.
 
 ## Create a new page
 
@@ -162,7 +162,7 @@ Now it's time to load the builder in your browser.
 
 If you want to start with a blank page for a new page design, execute the `init()` function. See the example code in the right panel.
 
-Note the `themeUrl` parameter in the constructor method, this is required to initialize a new page. In Emotsy Builder, every page is created based on a theme, which consists of a set of related styles and page elements.
+Note the `themeUrl` parameter in the constructor method, this is required to initialize a new page. In BuilderJS, every page is created based on a theme, which consists of a set of related styles and page elements.
 
 If everything is configured correctly, the builder interface will be rendered in your browser, and a sample page like the one below will be loaded:
 
@@ -174,7 +174,7 @@ Another sample:
 
 ## Open a page
 
-Rather than starting from a blank page, you'll often want to load previously saved work to continue designing. Emotsy Builder supports multiple ways to load HTML content into the builder view.
+Rather than starting from a blank page, you'll often want to load previously saved work to continue designing. BuilderJS supports multiple ways to load HTML content into the builder view.
 
 ### From JSON string
 
@@ -200,7 +200,7 @@ Rather than starting from a blank page, you'll often want to load previously sav
 
 In this example, the data variable contains the entire JSON representation of an HTML page as a string. This string is then passed to the builder's load function to display the content in the browser.
 
-Emotsy Builder pages are stored in JSON format, which can be saved in any type of storage - such as the file system, a relational database (RDBMS), and more. Later, the stored JSON can be loaded back into the design view.
+BuilderJS pages are stored in JSON format, which can be saved in any type of storage - such as the file system, a relational database (RDBMS), and more. Later, the stored JSON can be loaded back into the design view.
 
 Don't worry about the JSON format or how to generate it - this will be explained in the Storage section below.
 
@@ -232,13 +232,13 @@ For example, if your page's JSON data is stored on a server and accessible at ht
 
 Don't worry about the JSON format or how to generate it - this will be covered in the Storage section below.
 
-Below is a summary of the constructor parameters for Emotsy Builder:
+Below is a summary of the constructor parameters for BuilderJS:
 
 Parameter | Description
 --------- | -----------
 mainContainer | The ID of the HTML element into which the builder design will be rendered
 settingContainer | The ID of the HTML element into which the builder settings will be rendered
-themeUrl | URL of the theme folder. Emotsy Builder comes with many themes and even more themes are coming.
+themeUrl | URL of the theme folder. BuilderJS comes with many themes and even more themes are coming.
 assetUploadHandler | URL of the server-side script which handles assets uploading
 aiHandler | URL of the server-side script which handles AI features. See our example writen in PHP for reference.
 
@@ -248,11 +248,11 @@ Loading data from a URL is recommended over embedding a large JSON string direct
 
 # Configure server script
 
-Setting up Emotsy Builder involves certain steps, especially when configuring the page that wraps around it and interacts with it. However, this is intended by design: Emotsy Builder is built to be fully customizable.
+Setting up BuilderJS involves certain steps, especially when configuring the page that wraps around it and interacts with it. However, this is intended by design: BuilderJS is built to be fully customizable.
 
-For example, Emotsy Builder does not include any default **SAVE** or **EXPORT** buttons. You will need to add these buttons yourself and handle their click events. When the user clicks a Save button, it should call the builder's `getJson()` API method to retrieve the current design. From there, it's up to you to handle the result-for instance, by sending it via an AJAX request to a server-side script that saves it to local storage, a database management system (DBMS), or remote storage such as AWS S3.
+For example, BuilderJS does not include any default **SAVE** or **EXPORT** buttons. You will need to add these buttons yourself and handle their click events. When the user clicks a Save button, it should call the builder's `getJson()` API method to retrieve the current design. From there, it's up to you to handle the result-for instance, by sending it via an AJAX request to a server-side script that saves it to local storage, a database management system (DBMS), or remote storage such as AWS S3.
 
-By creating the buttons yourself, you're not limited to Emotsy Builder's default style-you're free to place them anywhere on your page and style them however you like.
+By creating the buttons yourself, you're not limited to BuilderJS's default style-you're free to place them anywhere on your page and style them however you like.
 
 ## Save
 
@@ -326,7 +326,7 @@ if __name__ == '__main__':
 
 ```ruby
 # Sample controller code for handling the save request
-# sent from Emotsy Builder
+# sent from BuilderJS
 
 require 'activerecord'
 require 'mysql'
@@ -359,7 +359,7 @@ template.save
 <?php
 
 // Sample controller code for handling the save request
-// sent from Emotsy Builder
+// sent from BuilderJS
 
 // MySQL credentials
 $servername = "localhost";
@@ -385,15 +385,15 @@ if ($conn->query($sql) === TRUE) {
 $conn->close();
 ```
 
-Once you have initialized the builder and either loaded a template or started a new page, you can begin designing your pages. To save your current work for future editing, you need to capture the current data from Emotsy Builder and store it in a system such as a filesystem or MySQL database.
+Once you have initialized the builder and either loaded a template or started a new page, you can begin designing your pages. To save your current work for future editing, you need to capture the current data from BuilderJS and store it in a system such as a filesystem or MySQL database.
 
-Since Emotsy Builder is a pure JavaScript application running in the browser, it does not store any data by itself - this is where a server-side script becomes necessary. The most common approach is to use Emotsy Builder's `getJson()` API method to capture the current state, then send the resulting data to a server script via Ajax for storage. In this example, we provide backend handlers implemented in PHP and Ruby, though you can use any programming language you prefer. The key point is capturing and handling the input.
+Since BuilderJS is a pure JavaScript application running in the browser, it does not store any data by itself - this is where a server-side script becomes necessary. The most common approach is to use BuilderJS's `getJson()` API method to capture the current state, then send the resulting data to a server script via Ajax for storage. In this example, we provide backend handlers implemented in PHP and Ruby, though you can use any programming language you prefer. The key point is capturing and handling the input.
 
 Click the php or ruby tabs in the code sample panel to see the details. Refer to the example on the right to understand how this works in practice.
 
 Summary of steps:
 
-* Load Emotsy Builder
+* Load BuilderJS
 * Create a new page to design
 * Add a "Save" button that, when clicked, retrieves the builder data and sends it to the server's save.php script, which stores the HTML content in a MySQL database.
 
@@ -478,7 +478,7 @@ if __name__ == '__main__':
 
 The next common task is exporting the page for real-world use. Once users finish their design and click the **Export** button, the final HTML content is sent to a server-side script that handles the export process-typically via an AJAX request. See the example on the right.
 
-Emotsy Builder provides a `getHtml()` method that captures the final HTML of the designed page.
+BuilderJS provides a `getHtml()` method that captures the final HTML of the designed page.
 
 After receiving the HTML content, the server script can save it to a file and make it available for download. The exported HTML file can then be uploaded to a hosting environment as a normal HTML page.
 
@@ -539,32 +539,32 @@ If the HTML design contains references to external CSS files, it is considered b
 # Features overview
 
 ## Visual drag & drop designer
-Build your perfect page with ease — simply drag and drop elements exactly where you want them. No need to write a single line of HTML code. Whether you're a designer, marketer, or just getting started, Emotsy Builder makes page creation fast, intuitive, and enjoyable. Focus entirely on your creative vision while the builder handles the underlying code, structure, and responsiveness — giving you beautiful results without the technical hassle.
+Build your perfect page with ease — simply drag and drop elements exactly where you want them. No need to write a single line of HTML code. Whether you're a designer, marketer, or just getting started, BuilderJS makes page creation fast, intuitive, and enjoyable. Focus entirely on your creative vision while the builder handles the underlying code, structure, and responsiveness — giving you beautiful results without the technical hassle.
 
 ## Visual styling sade easy
-Style your HTML page effortlessly with Emotsy Builder's intuitive visual controls. There's no need to learn or even glance at CSS code—just point, click, and adjust. Modify colors, fonts, spacing, borders, shadows, hover effects, and more with smart UI panels that respond in real time. Whether you're refining typography or creating subtle animations, our interface empowers you to bring your design ideas to life with pixel-level precision—all while maintaining clean, valid code behind the scenes.
+Style your HTML page effortlessly with BuilderJS's intuitive visual controls. There's no need to learn or even glance at CSS code—just point, click, and adjust. Modify colors, fonts, spacing, borders, shadows, hover effects, and more with smart UI panels that respond in real time. Whether you're refining typography or creating subtle animations, our interface empowers you to bring your design ideas to life with pixel-level precision—all while maintaining clean, valid code behind the scenes.
 
 ## Rich library of composite elements
 Build faster with a rich collection of pre-designed, fully customizable composite elements. Choose from navigation menus, hero sections, pricing tables, testimonials, feature blocks, social icon sets, sliders, and banners—each thoughtfully designed and ready to use. Simply drag and drop components into your layout, then fine-tune them to match your brand or project requirements. These ready-made blocks help you create modern, professional layouts without reinventing the wheel, saving you hours of manual work.
 
 ## Seamless Device Preview
-Ensure your page looks stunning on every screen size with Emotsy Builder's responsive preview modes. Instantly switch between mobile, tablet, and desktop views to see exactly how your content adapts across devices. No guesswork, no resizing your browser—just real-time previews that reflect modern responsiveness standards. Fine-tune layouts and element spacing per device to achieve perfect results, whether you're designing a landing page, email, or a responsive website.
+Ensure your page looks stunning on every screen size with BuilderJS's responsive preview modes. Instantly switch between mobile, tablet, and desktop views to see exactly how your content adapts across devices. No guesswork, no resizing your browser—just real-time previews that reflect modern responsiveness standards. Fine-tune layouts and element spacing per device to achieve perfect results, whether you're designing a landing page, email, or a responsive website.
 
 ## AI-Powered Content Assistance
-Let AI accelerate your creative process like never before. Emotsy Builder's built-in AI assistant can automatically generate meaningful headlines, filler text, calls to action, and even full sections of your page content—all based on your instructions or theme. It can fix grammar, rewrite text, suggest better phrasing, and ensure a consistent tone across your design. Whether you're stuck on copy or in a rush, AI helps you move forward with quality content in seconds.
+Let AI accelerate your creative process like never before. BuilderJS's built-in AI assistant can automatically generate meaningful headlines, filler text, calls to action, and even full sections of your page content—all based on your instructions or theme. It can fix grammar, rewrite text, suggest better phrasing, and ensure a consistent tone across your design. Whether you're stuck on copy or in a rush, AI helps you move forward with quality content in seconds.
 
 ## Universal Template Format
-Emotsy Builder is powered by a flexible, human-readable markup language designed for real-world design and development workflows. Whether you're a designer looking to make your template editable or a developer integrating dynamic content, Emotsy's format makes it easy. Convert your static HTML designs into reusable themes that work seamlessly inside the builder—complete with editable zones, smart components, and modular layouts. This universal format bridges the gap between creativity and productivity.
+BuilderJS is powered by a flexible, human-readable markup language designed for real-world design and development workflows. Whether you're a designer looking to make your template editable or a developer integrating dynamic content, Emotsy's format makes it easy. Convert your static HTML designs into reusable themes that work seamlessly inside the builder—complete with editable zones, smart components, and modular layouts. This universal format bridges the gap between creativity and productivity.
 
 ## Clean & Semantic HTML Output
 Every page you build with Emotsy is backed by professionally structured, semantic HTML code—optimized for real-world use. Whether you're deploying to production, integrating with a CMS, or sending as part of an email campaign, you can trust the code is lightweight, accessible, and compliant with best practices. SEO experts, accessibility auditors, and developers alike will appreciate the minimalistic yet meaningful output, making integration and maintenance a breeze.
 
 ## Revision History
-Never worry about making a mistake again. Emotsy Builder includes powerful version history tracking, so you can experiment freely and revert back to any previous version of your design with a single click. Automatic saving ensures your work is protected in real time, and manual checkpoints let you capture key design milestones. Whether you're A/B testing layouts or fixing an accidental change, revision history gives you peace of mind and total creative freedom.
+Never worry about making a mistake again. BuilderJS includes powerful version history tracking, so you can experiment freely and revert back to any previous version of your design with a single click. Automatic saving ensures your work is protected in real time, and manual checkpoints let you capture key design milestones. Whether you're A/B testing layouts or fixing an accidental change, revision history gives you peace of mind and total creative freedom.
 
 # Theme & template
 
-A theme consists of sample element templates that share a unified style. Every website or page in Emotsy Builder is based on a theme. In Emotsy Builder, a theme is actually a set of many HTML element templates that users can quickly drag and drop them into the page designer. Each theme comes with its own unique styles and a predefined set of HTML elements for users to choose from.
+A theme consists of sample element templates that share a unified style. Every website or page in BuilderJS is based on a theme. In BuilderJS, a theme is actually a set of many HTML element templates that users can quickly drag and drop them into the page designer. Each theme comes with its own unique styles and a predefined set of HTML elements for users to choose from.
 
 Some examples of HTML elements in a theme include:
 
@@ -578,20 +578,20 @@ Some examples of HTML elements in a theme include:
 
 Users can simply choose an element, drag and drop it into the designer view, and modify the element's content to make up their own page.
 
-In addition to the available templates in Emotsy Builder, you can also create custom themes to enhance your users' experience. To create a theme for Emotsy, you'll need to understand its theme markup language and conventions. Generally, the process of creating an Emotsy theme involves the following steps:
+In addition to the available templates in BuilderJS, you can also create custom themes to enhance your users' experience. To create a theme for Emotsy, you'll need to understand its theme markup language and conventions. Generally, the process of creating an Emotsy theme involves the following steps:
 
 * Step 1: Design a visually appealing HTML template that includes all possible elements.
-* Step 2: Break the template into smaller HTML components, each wrapped with Emotsy Builder's custom markup.
+* Step 2: Break the template into smaller HTML components, each wrapped with BuilderJS's custom markup.
 * Step 3: Publish your theme (the individual HTML components).
 
-Detailed specifications and guidelines for working with themes are still in development. The Emotsy Builder team is actively working to release more themes for users every day. A comprehensive guide will be available soon to help development teams create their own themes with ease.
+Detailed specifications and guidelines for working with themes are still in development. The BuilderJS team is actively working to release more themes for users every day. A comprehensive guide will be available soon to help development teams create their own themes with ease.
 
 # Common issues
 
 Issue | Solution
 ------- | --------
 Page blank | When loading our pre-built demo folder, if you see that the page is just blank without any content, then it is very likely that the core files `emotsy.js` is not referenced correctly. Make sure you use the correct absolute or relative path to the file.
-Element not found error | Sometimes, you might get a blank page with such message. Check the `mainContainer` parameter you pass to the builder and ensure it matches the valid ID of an HTML element that serves as the container for Emotsy Builder’s rendering. Notice that it should be an ID string which is compatible with CSS selector.
+Element not found error | Sometimes, you might get a blank page with such message. Check the `mainContainer` parameter you pass to the builder and ensure it matches the valid ID of an HTML element that serves as the container for BuilderJS’s rendering. Notice that it should be an ID string which is compatible with CSS selector.
 Page frozen | In certain cases, the browser may become frozen and unresponsive after a while. This is very likely caused by a JavaScript function running in an infinite loop. Often, the issue stems from event handler code, particularly the changed event. Make sure you do not execute long-running functions in your changed event handler, as this event is triggered very frequently during user interactions.
 Styles broken | If the page loads but appears without proper styles, it’s very likely that the `emotsy.css` file is not correctly referenced. Verify that you’re using the correct path to the CSS file.
 Error saving or exporting | Save and export operations are handled by server-side scripts. To debug issues, check your server’s log files for details. Alternatively, you can wrap your server script in a try/catch block to return readable exception messages to the browser. See the Error codes table below for a list of supported HTTP status codes.
@@ -618,7 +618,7 @@ Error saving or exporting | Save and export operations are handled by server-sid
 </script>
 ```
 
-Emotsy Builder is written with a well-designed structure that allows for easy and straightforward customization. For example, you can add your own custom widget to the library alongside the default ones such as Text, Image, Video, Social Network Icons, and more. Check the right panel's JavaScript tab to learn how to create a custom widget.
+BuilderJS is written with a well-designed structure that allows for easy and straightforward customization. For example, you can add your own custom widget to the library alongside the default ones such as Text, Image, Video, Social Network Icons, and more. Check the right panel's JavaScript tab to learn how to create a custom widget.
 
 By extending the Widget base class, your MySampleWidget will automatically inherit all the common widget behaviors like drag-and-drop functionality, and support for moving, duplicating, and deleting. You can also define its own characteristics, such as title and thumbnail, by overriding the corresponding methods.
 
@@ -628,12 +628,12 @@ Documentation is currently being updated. In the meantime, please contact us for
 
 ## API methods
 
-Since Emotsy Builder is a pure JavaScript library that accepts parameters during initialization, it can be integrated with any programming language or database system.
+Since BuilderJS is a pure JavaScript library that accepts parameters during initialization, it can be integrated with any programming language or database system.
 
-Its main function is to load an HTML template, allow users to make changes via visual drag-and-drop or source editing, and then submit those changes to the server for further handling, communication is made by **Ajax**. You can use PHP, Ruby, Python, Java, .NET, or any other server-side scripting language to handle Emotsy Builder requests. The distributable package also includes sample PHP scripts for saving, exporting, and more.
+Its main function is to load an HTML template, allow users to make changes via visual drag-and-drop or source editing, and then submit those changes to the server for further handling, communication is made by **Ajax**. You can use PHP, Ruby, Python, Java, .NET, or any other server-side scripting language to handle BuilderJS requests. The distributable package also includes sample PHP scripts for saving, exporting, and more.
 exporting, and more.
 
-In the browser, you can interact with Emotsy Builder through its public methods
+In the browser, you can interact with BuilderJS through its public methods
 
 Method | Description
 --------------- | -------
@@ -644,7 +644,7 @@ Method | Description
 `getSelectedElement()`  | Returns the currently selected element on the page.
 `insertElements(list)` | Inserts a list of elements into the current page. This method is useful when you want to programmatically interact with the builder.
 `addWidgets(item)`     | Adds a new widget to the widget panel. This method is useful when you want to define your own custom widgets.
-`load(json)` | Loads a custom page defined by the provided JSON structure. The JSON must comply with Emotsy Builder’s specifications and conventions.
+`load(json)` | Loads a custom page defined by the provided JSON structure. The JSON must comply with BuilderJS’s specifications and conventions.
 
 ## Events
 
@@ -655,12 +655,12 @@ Method | Description
     // listens for an event and executes custom code when triggered
 
     builder.addEventListener('loaded', function (event) {
-        console.log('The page has been loaded into Emotsy Builder!');
+        console.log('The page has been loaded into BuilderJS!');
     });
 
 </script>
 ```
-The following are Emotsy Builder’s events that you can watch for to detect changes and interactions within the editor:
+The following are BuilderJS’s events that you can watch for to detect changes and interactions within the editor:
 
 Event | Description
 --------------- | -------
